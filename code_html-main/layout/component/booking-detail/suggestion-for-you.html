@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/css/main.css" rel="stylesheet">
+        <link href="/css/custom-modal.css" rel="stylesheet">
+        <link href="/css/custom-booking-detail/" rel="stylesheet">
+        <link href="/css/room-details/your-choice.css" rel="stylesheet">
+    </head>
+    <body>
+     <!-- suggestion for you -->
+     <div id="suggestion-for-you" class="suggestion-modal" name="suggestion-for-you" style="display: block;">
+        <div class="suggestion-modal-content hide-scroll-bar">
+            <div class="d-flex pt-4 justify-content-between position_close-modal-top bg-white">
+                <span class="heading-5 text-greyscale-900">Gợi ý cho bạn</span>
+                <button type="close" class="body-16-medium text-greyscale-900 padding-none"
+                    onclick=closeSuggestionForYou()>
+                    <img src="/libary/svg/CloseCircle-Modal-black.svg" alt="">
+                </button>
+            </div>
+            <div class="d-flex flex-column gap-24px">
+                <!-- 1st -->
+                <div class="view-room-hotel" id="view-room-hotel-1">
+                    <div class="your-choice-card">
+                        <div class="d-flex gap-24px">
+                            <div class="image-preview">
+                                <img src="/libary/booking/booking-card/room-mini.png" class="your-choice-banner-image"
+                                    alt="" />
+                                <button class="your-choice-banner-button" id="btn-open_modal-room-detail">
+                                    <img src="/libary/booking/svg/Eye-white.svg" class="" alt="" />
+                                    <span class="body-12-bold text-greyscale-50">Xem chi tiết</span>
+                                </button>
+                            </div>
+                            <div class="your-choice-card-info">
+                                <div>
+                                    <div class="d-flex align-items-center gap-4px">
+                                        <img src="/libary/room_detail/svg/hotel.svg" class="" alt="" />
+                                        <span class="body-14-medium text-semantic-1">
+                                            Khách sạn
+                                        </span>
+                                    </div>
+                                    <span class="heading-5 text-greyscale-700">Phòng Standard</span>
+                                </div>
+                                <div class="d-flex flex-wrap gap-12px mt-6px">
+                                    <div class="d-flex align-items-center gap-4px">
+                                        <img src="/libary/booking/svg/Users-Group.svg" class="" alt="" />
+                                        <span class="body-14-medium text-greyscale-400">
+                                            2-3 người
+                                        </span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-4px">
+                                        <img src="/libary/booking/svg/Home-lite.svg" class="" alt="" />
+                                        <span class="body-14-medium text-greyscale-400">
+                                            1 phòng
+                                        </span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-4px">
+                                        <img src="/libary/booking/svg/Maximize-Square.svg" class="" alt="" />
+                                        <span class="body-14-medium text-greyscale-400 ">70 m<sup
+                                                class="body-8-sup text-greyscale-400">2</sup></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="mt-2px">
+                                    <span class="body-12-medium text-greyscale-700">Bữa sáng miễn phí</span>
+                                    <div class="d-flex align-items-center position-relative">
+                                        <div>
+                                            <span class="heading-4 text-success">1.540.000đ</span>
+                                            <span class="body-14-medium text-greyscale-400 ml-6px">/đêm</span>
+                                        </div>
+                                        <img src="/libary/booking/svg/info.svg" alt="" class="open-tooltip"
+                                            id="btb_open-option-tooltip">
+                                        <!-- modal tooltip -->
+                                        <div class="price-tooltip suggest_option_tooltip-position option_view-tooltip"
+                                            id="option-price-tooltip">
+                                            <div class="current-price">
+                                                <span class="body-16-bold text-greyscale-900">
+                                                    Giá gốc
+                                                </span>
+                                                <span id="" class="body-16-bold text-greyscale-900 "
+                                                    style="text-decoration: line-through;">
+                                                    2,540,000đ
+                                                </span>
+                                            </div>
+
+                                            <div class="price-sale-off mt-8px">
+                                                <span class="body-16-bold text-greyscale-900">Giá đã giảm</span>
+                                                <ul id="sale-off-list" class="mt-8px">
+                                                    <li id="sale-off-1">
+                                                        <div class="d-flex justify-content-between cursor-pointer"
+                                                            name="discount">
+                                                            <span id=""
+                                                                class="body-14-medium text-greyscale-900 text-underline">Giảm
+                                                                200k
+                                                                cho phòng từ 2 triệu đến 10
+                                                                triệu</span>
+                                                            <span id="sale-off-price"
+                                                                class="body-14-medium text-greyscale-900 ml-28px">2,240,000đ</span>
+                                                        </div>
+                                                    </li>
+                                                    <li id="sale-off-2">
+                                                        <div class="d-flex justify-content-between cursor-pointer"
+                                                            name="discount">
+                                                            <span id=""
+                                                                class="body-14-medium text-greyscale-900 text-underline">Giảm
+                                                                200k
+                                                                cho phòng từ 2 triệu đến 10
+                                                                triệu</span>
+                                                            <span id=""
+                                                                class="body-14-medium text-greyscale-900 ml-28px">2,240,000đ</span>
+                                                        </div>
+
+                                                    </li>
+                                                    <li id="sale-off-3">
+                                                        <div class="d-flex justify-content-between cursor-pointer"
+                                                            name="discount">
+                                                            <span id=""
+                                                                class="body-14-medium text-greyscale-900 text-underline">Giảm
+                                                                200k
+                                                                cho phòng từ 2 triệu đến 10
+                                                                triệu</span>
+                                                            <span id=""
+                                                                class="body-14-medium text-greyscale-900 ml-28px">2,240,000đ</span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="divider-x-other-line">
+
+                                            </div>
+
+                                            <div class="best-price mt-10px">
+                                                <span class="body-16-bold text-greyscale-900">Giá tốt
+                                                    nhất</span>
+                                                <span class="body-18-bold text-success">1,540,000đ</span>
+                                            </div>
+                                            <!-- triangle bottom -->
+                                            <div class="arrow-down-price-tooltip"></div>
+                                        </div>
+                                    </div>
+                                    <span class="body-12-medium text-greyscale-400">Giá đã gồm thuế dịch
+                                    </span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center py-2">
+                                    <div class="d-flex align-items-center gap-4px">
+                                        <span class="body-14-medium text-greyscale-500 ">Số lượng</span>
+                                        <div class="increment-decrement">
+                                            <button id="" class="">
+                                                <img src="/libary/booking/svg/circle-decrement.svg" id="" class=""
+                                                    alt="">
+                                            </button>
+                                            <span id="" class="">0</span>
+                                            <button id="" class="">
+                                                <img src="/libary/booking/svg/circle-increment.svg" id="" class=""
+                                                    alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <span class="body-14-medium text-semantic-1">Còn 120 phòng</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 2nd -->
+                <div class="view-room-hotel" id="view-room-hotel-1">
+                    <div class="your-choice-card">
+                        <div class="d-flex gap-24px">
+                            <div class="image-preview">
+                                <img src="/libary/booking/booking-card/room-mini.png" class="your-choice-banner-image"
+                                    alt="" />
+                                <button class="your-choice-banner-button" id="btn-open_modal-room-detail">
+                                    <img src="/libary/booking/svg/Eye-white.svg" class="" alt="" />
+                                    <span class="body-12-bold text-greyscale-50">Xem chi tiết</span>
+                                </button>
+                            </div>
+                            <div class="your-choice-card-info">
+                                <div>
+                                    <div class="d-flex align-items-center gap-4px">
+                                        <img src="/libary/room_detail/svg/hotel.svg" class="" alt="" />
+                                        <span class="body-14-medium text-semantic-1">
+                                            Khách sạn
+                                        </span>
+                                    </div>
+                                    <span class="heading-5 text-greyscale-700">Phòng Standard</span>
+                                </div>
+                                <div class="d-flex flex-wrap gap-12px mt-6px">
+                                    <div class="d-flex align-items-center gap-4px">
+                                        <img src="/libary/booking/svg/Users-Group.svg" class="" alt="" />
+                                        <span class="body-14-medium text-greyscale-400">
+                                            2-3 người
+                                        </span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-4px">
+                                        <img src="/libary/booking/svg/Home-lite.svg" class="" alt="" />
+                                        <span class="body-14-medium text-greyscale-400">
+                                            1 phòng
+                                        </span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-4px">
+                                        <img src="/libary/booking/svg/Maximize-Square.svg" class="" alt="" />
+                                        <span class="body-14-medium text-greyscale-400 ">70 m<sup
+                                                class="body-8-sup text-greyscale-400">2</sup></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="mt-2px">
+                                    <span class="body-12-medium text-greyscale-700">Bữa sáng miễn phí</span>
+                                    <div class="d-flex align-items-center position-relative">
+                                        <div>
+                                            <span class="heading-4 text-success">1.540.000đ</span>
+                                            <span class="body-14-medium text-greyscale-400 ml-6px">/đêm</span>
+                                        </div>
+                                        <img src="/libary/booking/svg/info.svg" alt="" class="open-tooltip"
+                                            id="btb_open-option-tooltip">
+                                        <!-- modal tooltip -->
+                                        <div class="price-tooltip suggest_option_tooltip-position option_view-tooltip"
+                                            id="option-price-tooltip">
+                                            <div class="current-price">
+                                                <span class="body-16-bold text-greyscale-900">
+                                                    Giá gốc
+                                                </span>
+                                                <span id="" class="body-16-bold text-greyscale-900 "
+                                                    style="text-decoration: line-through;">
+                                                    2,540,000đ
+                                                </span>
+                                            </div>
+
+                                            <div class="price-sale-off mt-8px">
+                                                <span class="body-16-bold text-greyscale-900">Giá đã giảm</span>
+                                                <ul id="sale-off-list" class="mt-8px">
+                                                    <li id="sale-off-1">
+                                                        <div class="d-flex justify-content-between cursor-pointer"
+                                                            name="discount">
+                                                            <span id=""
+                                                                class="body-14-medium text-greyscale-900 text-underline">Giảm
+                                                                200k
+                                                                cho phòng từ 2 triệu đến 10
+                                                                triệu</span>
+                                                            <span id="sale-off-price"
+                                                                class="body-14-medium text-greyscale-900 ml-28px">2,240,000đ</span>
+                                                        </div>
+                                                    </li>
+                                                    <li id="sale-off-2">
+                                                        <div class="d-flex justify-content-between cursor-pointer"
+                                                            name="discount">
+                                                            <span id=""
+                                                                class="body-14-medium text-greyscale-900 text-underline">Giảm
+                                                                200k
+                                                                cho phòng từ 2 triệu đến 10
+                                                                triệu</span>
+                                                            <span id=""
+                                                                class="body-14-medium text-greyscale-900 ml-28px">2,240,000đ</span>
+                                                        </div>
+
+                                                    </li>
+                                                    <li id="sale-off-3">
+                                                        <div class="d-flex justify-content-between cursor-pointer"
+                                                            name="discount">
+                                                            <span id=""
+                                                                class="body-14-medium text-greyscale-900 text-underline">Giảm
+                                                                200k
+                                                                cho phòng từ 2 triệu đến 10
+                                                                triệu</span>
+                                                            <span id=""
+                                                                class="body-14-medium text-greyscale-900 ml-28px">2,240,000đ</span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="divider-x-other-line">
+
+                                            </div>
+
+                                            <div class="best-price mt-10px">
+                                                <span class="body-16-bold text-greyscale-900">Giá tốt
+                                                    nhất</span>
+                                                <span class="body-18-bold text-success">1,540,000đ</span>
+                                            </div>
+                                            <!-- triangle bottom -->
+                                            <div class="arrow-down-price-tooltip"></div>
+                                        </div>
+                                    </div>
+                                    <span class="body-12-medium text-greyscale-400">Giá đã gồm thuế dịch
+                                    </span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center py-2">
+                                    <div class="d-flex align-items-center gap-4px">
+                                        <span class="body-14-medium text-greyscale-500 ">Số lượng</span>
+                                        <div class="increment-decrement">
+                                            <button id="" class="">
+                                                <img src="/libary/booking/svg/circle-decrement.svg" id="" class=""
+                                                    alt="">
+                                            </button>
+                                            <span id="" class="">0</span>
+                                            <button id="" class="">
+                                                <img src="/libary/booking/svg/circle-increment.svg" id="" class=""
+                                                    alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <span class="body-14-medium text-semantic-1">Còn 120 phòng</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="py-4 d-flex flex-wrap justify-content-between position_close-modal-bottom bg-white">
+                <div class="d-flex flex-column">
+                    <span class="body-14-bold text-greyscale-400">Chỉ từ</span>
+                    <div class="d-flex gap-4px align-items-baseline">
+                        <span class="heading-6 text-greyscale-900">1,540,000đ</span>
+                        <span class="body-14-bold text-greyscale-400">/đêm</span>
+                    </div>
+                </div>
+
+                <button id="" name="" class="button-fit-12-44-main-secondary-gradient body-16-bold text-white">Chọn
+                    ngay</button>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

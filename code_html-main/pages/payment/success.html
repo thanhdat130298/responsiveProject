@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Thanh toán thành công</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/header-footer.css" rel="stylesheet">    
+    <link href="/css/custom-payment/custom-payment.css" rel="stylesheet">    
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header-drop-shadow">
+            <div class="container d-flex flex-wrap justify-content-between py-17px">
+                <!-- logo, nav -->
+                <div class="d-flex flex-wrap justify-content-between gap-40px align-items-center">
+                    <!-- logo link -->
+                    <a href="/pages" class="p-0 m-0 d-flex align-items-center">
+                        <img src="/libary/header_footer/Logo.png" class="" alt="logo" />
+                    </a>
+                    <!-- divider -->
+                    <div class="divider-y"></div>
+                    <!-- nav link -->
+                    <a href="/pages/searching-list-room.html" class="body-18-bold text-greyscale-500">
+                        Đặt phòng
+                    </a>
+                    <a href="/pages/news/" class="body-18-bold text-greyscale-500">
+                        Tin tức & Sự kiện
+                    </a>
+                </div>
+                <!-- support signin, notification -->
+                <div class="d-flex flex-wrap justify-content-between gap-24px align-items-center">
+                    <a href="/#" class="body-18-bold text-greyscale-500">
+                        Hỗ trợ
+                    </a>
+
+                    <!-- drop down select currency and language -->
+                    <div class="position-relative">
+                        <button class="language-currency-button" id="open_currency">
+                            <img src="/libary/header_footer/svg/global.svg" alt="">
+                            <span class="body-16-bold text-greyscale-500">VN/VND</span>
+                            <img src="/libary/svg/chevron-down.svg" alt="">
+                        </button>
+
+                        <div class="language-currency-dropdown" id="language-currency-dropdown">
+                            <div class="d-flex p-16px gap-16px">
+                                <img src="/libary/header_footer/svg/currency-arrow.svg" class="mini-arrow" alt="">
+                                <!-- language -->
+                                <div class="w-120px">
+                                    <span class="body-16-bold text-greyscale-500 w-100">
+                                        Ngôn ngữ
+                                    </span>
+                                    <div class="vietnamese">
+                                        <img src="/libary/header_footer/svg/vietnam.svg" alt="">
+                                        <span class="body-14-bold text-greyscale-900 ml-12px">Tiếng Việt</span>
+                                    </div>
+                                    <div class="english">
+                                        <img src="/libary/header_footer/svg/english.svg" alt="">
+                                        <span class="body-14-bold text-greyscale-400 ml-12px">English</span>
+                                    </div>
+                                </div>
+
+                                <!-- divider -->
+                                <div class="divider-y"></div>
+
+                                <!-- currentcy -->
+                                <div class="w-120px">
+                                    <span class="body-16-bold text-greyscale-500 w-100">
+                                        Tiền tệ
+                                    </span>
+                                    <ul class="currency-ul">
+                                        <li class="body-14-bold text-greyscale-900">VND</li>
+                                        <li class="body-14-bold text-greyscale-400">USD</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- button switch to host, button notification and button profile -->
+                    <!-- change when login or un-login -->
+                    <a href="/#" class="body-16-bold text-greyscale-900 button-switch-host">
+                        Switch to Host
+                    </a>
+
+                    <!-- notification icon -->
+                    <div class="position-relative">
+                        <div id="notification_button" class="cursor-pointer" onclick="openModalNotification()">
+                            <img src="/libary/header_footer/svg/notification.svg" alt="">
+                            <!-- number of notification -->
+                            <div class="notification-number">
+                                <span class="noti-number-in body-12-medium text-white">5</span>
+                            </div>
+                        </div>
+                        <!-- notification panel when click -->
+                        <div id="notification_modal" class="notification-panel-content">
+                            <img src="/libary/header_footer/svg/currency-arrow.svg" class="mini-arrow-right" alt="">
+                            <div class="notification-head">
+                                <div class="">
+                                    <span class="heading-4 text-greyscale-900">Thông báo</span>
+                                </div>
+                                <button id=""
+                                    class="d-flex align-items-center gap-4px body-14-medium text-greyscale-900" for="">
+                                    Đánh dấu tất cả là đã đọc
+                                    <img src="/libary/header_footer/svg/circle-check.svg" class="" alt="">
+                                </button>
+                            </div>
+
+                            <!-- notification row link -->
+                            <a href="#" class="notification-link">
+                                <div class="notification-row">
+                                    <!-- icon notification -->
+                                    <div class="notification-icon">
+                                        <div class="icon-for-noti" id="" name="" for="">
+                                            <img id="" src="/libary/header_footer/svg/notification-unread.svg" class=""
+                                                style="margin-top: -8px" name="" alt="">
+                                            <img id="" src="/libary/header_footer/svg/bell.svg" class="" name="" alt="">
+                                        </div>
+                                    </div>
+
+                                    <!-- content notification -->
+                                    <div class="notification-content">
+                                        <div class="">
+                                            <span id="" name="" for="" class="body-16-bold text-greyscale-900">Bảo
+                                                trì
+                                                hệ thống</span>
+                                        </div>
+                                        <div class="mt-8px">
+                                            <span id="" name="" for="" class="body-14-medium text-greyscale-900">Bảo
+                                                trì
+                                                hệ thống từ 20h
+                                                1/5/2022
+                                                đến 24h ngày 1/5/2022.</span>
+                                        </div>
+                                        <div class="mt-10px">
+                                            <span id="" name="" for="" class="body-12-medium text-semantic-1">10/05/2020
+                                                9:41</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notification-link">
+                                <div class="notification-row">
+                                    <!-- icon notification -->
+                                    <div class="notification-icon">
+                                        <div class="icon-for-noti" id="" name="" for="">
+                                            <img id="" src="/libary/header_footer/svg/notification-unread.svg" class=""
+                                                style="margin-top: -8px" name="" alt="">
+                                            <img id="" src="/libary/header_footer/svg/notification-cart.svg" class=""
+                                                name="" alt="">
+                                        </div>
+                                    </div>
+
+                                    <!-- content notification -->
+                                    <div class="notification-content">
+                                        <div class="">
+                                            <span id="" name="" for="" class="body-16-bold text-greyscale-900">Bảo
+                                                trì
+                                                hệ thống</span>
+                                        </div>
+                                        <div class="mt-8px">
+                                            <span id="" name="" for="" class="body-14-medium text-greyscale-900">Bảo
+                                                trì
+                                                hệ thống từ 20h
+                                                1/5/2022
+                                                đến 24h ngày 1/5/2022.</span>
+                                        </div>
+                                        <div class="mt-10px">
+                                            <span id="" name="" for="" class="body-12-medium text-semantic-1">10/05/2020
+                                                9:41</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notification-link">
+                                <div class="notification-row">
+                                    <!-- icon notification -->
+                                    <div class="notification-icon">
+                                        <div class="icon-for-noti" id="" name="" for="">
+                                            <img id="" src="/libary/header_footer/svg/notification-unread.svg"
+                                                class="d-none" style="margin-top: -8px" name="" alt="">
+                                            <img id="" src="/libary/header_footer/svg/notification-bag.svg" class=""
+                                                name="" alt="">
+                                        </div>
+                                    </div>
+
+                                    <!-- content notification -->
+                                    <div class="notification-content">
+                                        <div class="">
+                                            <span id="" name="" for="" class="body-16-bold text-greyscale-900">Bảo
+                                                trì
+                                                hệ thống</span>
+                                        </div>
+                                        <div class="mt-8px">
+                                            <span id="" name="" for="" class="body-14-medium text-greyscale-900">Bảo
+                                                trì
+                                                hệ thống từ 20h
+                                                1/5/2022
+                                                đến 24h ngày 1/5/2022.</span>
+                                        </div>
+                                        <div class="mt-10px">
+                                            <span id="" name="" for="" class="body-12-medium text-semantic-1">10/05/2020
+                                                9:41</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notification-link">
+                                <div class="notification-row">
+                                    <!-- icon notification -->
+                                    <div class="notification-icon">
+                                        <div class="icon-for-noti" id="" name="" for="">
+                                            <img id="" src="/libary/header_footer/svg/notification-unread.svg" class=""
+                                                style="margin-top: -8px" name="" alt="">
+                                            <img id="" src="/libary/header_footer/svg/notification-bag.svg" class=""
+                                                name="" alt="">
+                                        </div>
+                                    </div>
+
+                                    <!-- content notification -->
+                                    <div class="notification-content">
+                                        <div class="">
+                                            <span id="" name="" for="" class="body-16-bold text-greyscale-900">Bảo
+                                                trì
+                                                hệ thống</span>
+                                        </div>
+                                        <div class="mt-8px">
+                                            <span id="" name="" for="" class="body-14-medium text-greyscale-900">Bảo
+                                                trì
+                                                hệ thống từ 20h
+                                                1/5/2022
+                                                đến 24h ngày 1/5/2022.</span>
+                                        </div>
+                                        <div class="mt-10px">
+                                            <span id="" name="" for="" class="body-12-medium text-semantic-1">10/05/2020
+                                                9:41</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- user avatar icon -->
+                    <div class="position-relative">
+                        <!-- user icon button -->
+                        <button id="open_profile" class="">
+                            <img src="/libary/header_footer/svg/user-avatar.svg" alt="">
+                        </button>
+                        <!-- user panel when click -->
+                        <div id="profile-drop-down" class="profile-drop-down">
+                            <div class="profile-wrapper-modal-content">
+                                <img src="/libary/header_footer/svg/currency-arrow.svg" class="mini-arrow-right" alt="">
+
+                                <div class="list-profile-nav">
+                                    <a href="#" class="profile-link-row">
+                                        <div class="link-tag-name">
+                                            <img src="/libary/homepage/svg/user.svg" alt="">
+                                            <span class="body-16-medium text-greyscale-500">Thông tin cá nhân</span>
+                                        </div>
+                                        <div class="link-notification-number isNull">
+                                            <span id="" class="body-14-bold text-white">1</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="profile-link-row">
+                                        <div class="link-tag-name">
+                                            <img src="/libary/homepage/svg/shopping-bag.svg" alt="">
+                                            <span class="body-16-medium text-greyscale-500">Danh sách đặt phòng</span>
+                                        </div>
+                                        <div class="link-notification-number isNull">
+                                            <span id="" class="body-14-bold text-white">1</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="profile-link-row">
+                                        <div class="link-tag-name">
+                                            <img src="/libary/homepage/svg/heart-subscriber.svg" alt="">
+                                            <span class="body-16-medium text-greyscale-500">Địa điểm yêu thích</span>
+                                        </div>
+                                        <div class="link-notification-number isNull">
+                                            <span id="" class="body-14-bold text-white">1</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="profile-link-row">
+                                        <div class="link-tag-name">
+                                            <img src="/libary/homepage/svg/messages-buble.svg" alt="">
+                                            <span class="body-16-medium text-greyscale-500">Địa điểm yêu thích</span>
+                                        </div>
+                                        <div class="link-notification-number">
+                                            <span id="" class="body-14-bold text-white">2</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="profile-link-row">
+                                        <div class="link-tag-name">
+                                            <img src="/libary/homepage/svg/award-comment.svg" alt="">
+                                            <span class="body-16-medium text-greyscale-500">Đánh giá</span>
+                                        </div>
+                                        <div class="link-notification-number isNull">
+                                            <span id="" class="body-14-bold text-white">1</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="profile-link-row">
+                                        <div class="link-tag-name">
+                                            <img src="/libary/homepage/svg/headphone-live-chat.svg" alt="">
+                                            <span class="body-16-medium text-greyscale-500">Hỗ trợ từ OTG</span>
+                                        </div>
+                                        <div class="link-notification-number">
+                                            <span id="" class="body-14-bold text-white">4</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="profile-link-row">
+                                        <div class="link-tag-name">
+                                            <img src="/libary/homepage/svg/guard-sercurity.svg" alt="">
+                                            <span class="body-16-medium text-greyscale-500">Bảo mật</span>
+                                        </div>
+                                        <div class="link-notification-number isNull">
+                                            <span id="" class="body-14-bold text-white">1</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+
+                                <div class="divider-x"></div>
+
+                                <div class="profile-avatar-email">
+                                    <div class="profile-avatar">
+                                        <img src="/libary/homepage/avatar/dropdown-avatar.png" alt="">
+                                    </div>
+                                    <div class="profile-email">
+                                        <span id="profile-name" class="body-16-medium text-greyscale-900">Nguyễn Văn
+                                            A</span>
+                                        <span id="profile-email"
+                                            class="body-14-regular text-greyscale-500">nguyenvana@gmail.com</span>
+                                    </div>
+                                </div>
+
+                                <a href="#" id="logout"
+                                    class="button-100-border-main-p-10-20-rounder-8 body-16-bold text-main-secondary"
+                                    name="">Đăng xuất</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- main content -->
+        <div class="container min-h-55vh">
+
+            <!-- bread crumb list -->
+            <div class="breadcrumb-pannel">
+                <ul class="breadcrumb">
+                    <li><img src="/libary/svg/arrow-chevron-left.svg" alt=""></li>
+                    <li><a href="/pages/index.html" class="body-16-medium" style="color: var(--grayscale-900);">Quay lại trang chủ</a></li>
+                </ul>
+            </div>
+            <!-- main content -->
+            <div>
+                <div class="d-flex flex-column mt-3">
+                    <div class="d-flex justify-content-center">
+                        <img src="/libary/payment/modal-payment/success.png" alt="">
+                    </div>
+                    <div class="text-confirm" >
+                        <div class="d-flex flex-column align-items-center gap-6px">
+                            <span class="heading-3 text-greyscale-900">Thanh toán thành công</span>
+                            <span class="body-16-medium text-greyscale-500">Xác nhận đơn hàng đã được gửi tới hòm thư điện tử của Quý khách.</span>
+                            <span class="body-16-medium text-greyscale-500">Cảm ơn quý khách đã lựa chọn sử dụng dịch vụ của On The Go!</span>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center gap-16px">
+                            <button class="button-order-detail">Chi tiết đơn hàng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div class="footer-drop-shadow">
+            <div class="container">
+                <div class="d-flex flex-wrap justify-content-between pt-80px">
+                    <!-- logo link -->
+                    <a href="/pages" class="p-0 m-0">
+                         <img src="/libary/header_footer/Logo.png" class="" alt="logo" />
+                    </a>
+                    <!-- nav footer -->
+                    <div class="d-flex flex-wrap gap-40px">
+                        <div class="d-flex flex-column gap-32px">
+                            <a href="/#" class="body-18-bold text-greyscale-500 py-8px">
+                                Tin tức sự kiện
+                            </a>
+                        </div>
+                        <div class="d-flex flex-column gap-32px">
+                        </div>
+                    </div>
+
+                    <div class="d-flex">
+                        <img src="/libary/header_footer/right-footer-logo.svg" class="footer-logo-right" alt="">
+                        <div class="d-flex flex-column ml-32px">
+                            <span class="body-12-medium text-greyscale-700">Tải app tại</span>
+                            <a href="/#" class="mt-14px">
+                                <img src="/libary/header_footer/svg/App-Store.svg" class="" alt="download" />
+                            </a>
+                            <a href="/#" class="mt-14px">
+                                <img src="/libary/header_footer/svg/Google-Play.svg" class="" alt="download" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-copyright">
+                    <span class="body-14-medium text-greyscale-900">Copyright © 2022 On the Go. All rights
+                        reserved</span>
+                    <span class="body-14-medium text-greyscale-900">Power by Flamingo Resorts</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Js -->
+    <script src="/js/header-footer.js"></script>
+</body>
+
+</html>

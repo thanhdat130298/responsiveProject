@@ -1,0 +1,225 @@
+.home-banner-background {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+    background: var(--semantic-3);
+    padding-top: 78px;
+    padding-bottom: 78px;
+}
+
+.home-title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.title-content {
+    width: 60%;
+    max-width: 666px;
+}
+
+.title-description {
+    width: 40%;
+    max-width: 368px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.where-you-go-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 72px;
+    padding: 32px 60px;
+    background: var(--other-white);
+    box-shadow: 0px 3px 10px rgba(36, 107, 253, 0.15);
+    border-radius: 8px;
+}
+
+.where-you-go-option {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    align-items: center;
+}
+
+.divider-y-py-7-other-line {
+    width: 1px;
+    height: 100%;
+    min-height: 36px;
+    background: var(--other-line);
+}
+
+.option-modal {
+    position: absolute;
+    z-index: 2;
+    background: var(--other-white);
+    display: none;
+    flex-direction: column;
+    margin-top: 56px;
+    padding: 24px;
+    gap: 10px;
+    background: var(--other-white);
+    border: 1px solid var(--other-line);
+    box-shadow: 0px 64px 40px rgba(45, 41, 41, 0.08);
+    border-radius: 16px;
+}
+
+.filter-search {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-search {
+    padding: 12px 16px;
+    display: flex;
+    border-radius: 8px;
+}
+
+.list-search:hover {
+    padding: 12px 16px;
+    display: flex;
+    background: var(--grayscale-50);
+    border-radius: 8px;
+}
+
+.option-modal.active {
+    display: flex;
+}
+
+.option-person-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 320px;
+    padding: 12px 16px;
+    border-top: 1px solid var(--other-line);
+}
+
+.option-person-row:first-child {
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+    padding: 12px 16px;
+    border-top: 1px solid transparent;
+}
+
+.input-search-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 16px;
+    margin-right: -32px;
+    z-index: 2;
+}
+
+input[type="text"].input-search-modal {
+    width: 100%;
+    min-width: 320px;
+    padding: 12px 16px 12px 48px;
+    background: var(--grayscale-50);
+    border: 1px solid transparent;
+    border-radius: 8px;
+}
+
+input[type="text"]:focus.input-search-modal {
+    border: none;
+    outline: none;
+    border: 1px solid var(--main-secondary);
+    cursor: text;
+}
+
+input[type="text"].date-picker-homepage {
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+/* slide show */
+.slide-picture-and-text {
+    width: fit-content;
+}
+
+.splide {
+    visibility: visible !important;
+}
+
+#HomepageSplide .splide__track .splide__list {
+    display: flex;
+    gap: 32px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+#HomepageSplide .splide__track .splide__list .splide__slide {
+    display: flex;
+    width: fit-content !important;
+    flex-direction: column;
+    justify-content: end;
+    gap: 24px;
+    scroll-snap-align: start;
+}
+
+#HomepageSplide .splide__pagination {
+    display: none;
+}
+
+#CommentSplide .splide__pagination {
+    margin-bottom: -5%;
+    display: flex;
+}
+
+#CommentSplide .splide__pagination li .splide__pagination__page {
+    width: 16px;
+    height: 16px;
+    background: var(--secondary-100);
+}
+
+#CommentSplide .splide__pagination li .splide__pagination__page.is-active {
+    background: var(--main-secondary);
+    transform: scale(1) !important;
+}
+
+#CommentSplide .splide__track .splide__list {
+    display: flex;
+    gap: 40px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+#commentSplide .splide__track .splide__list .splide__slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 24px;
+    scroll-snap-align: start;
+}
+
+.comment-card {
+    width: fit-content;
+    display: flex;
+    gap: 64px;
+    padding: 40px;
+    align-items: center;
+    background: var(--grayscale-50);
+    border-radius: 32px;
+}
+
+.comment-image {
+    border-radius: 99px;
+}
+
+.comment-right {
+    max-width: 544px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.comment-star-rate {
+    display: flex;
+    gap: 8px;
+}

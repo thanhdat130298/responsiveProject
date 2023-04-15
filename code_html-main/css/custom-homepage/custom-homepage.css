@@ -1,0 +1,62 @@
+.button-homepage {
+  padding: 9px 20px;
+  background: linear-gradient(227.99deg, #FF972F 0%, #FF6B00 96.21%);
+  border-radius: 8px;
+}
+
+.button-homepage:hover {
+  box-shadow: 0px 4px 12px rgba(246, 108, 31, 0.34);
+}
+
+.button-homepage:active {
+  background: var(--main-secondary);
+}
+
+.button-homepage:disabled {
+  background: var(--grayscale-300);
+}
+
+.best-option-card {
+  background: var(--other-white);
+  box-shadow: 0px 3px 10px rgba(36, 107, 253, 0.15);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.best-option-card:hover {
+  cursor: pointer;
+  box-shadow: 0px 3px 10px rgba(36, 107, 253, 0.30);
+}
+
+.favorite-icon-search {
+  display: flex;
+  justify-content: center;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 24px;
+  height: 24px;
+
+  padding: 2px;
+  margin-top: 14px;
+  margin-right: 8px;
+
+  background: rgba(17, 24, 39, 0.3);
+  backdrop-filter: blur(2px);
+  border-radius: 6px;
+}
+
+.favorite-icon-search:hover svg {
+  fill: var(--system-error);
+}
+
+.favorite-icon-search:hover svg path {
+  stroke: var(--system-error);
+}
+
+.favorite-icon-search.active svg path {
+  stroke: var(--system-error);
+  fill: var(--system-error);
+}

@@ -1,0 +1,62 @@
+html * {
+    box-sizing: border-box;
+}
+
+.upload__box {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+
+    border: 1px dashed var(--other-line);
+    border-radius: 6px;
+    background-color: var(--other-white);
+}
+.upload__inputfile {
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.upload__btn {
+    display: inline-block;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.upload__img-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 23px;
+}
+
+.upload__img-box {
+    width: 100px;
+}
+
+.upload__img-close {
+    
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    text-align: center;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.upload__img-close:after {
+    content: url("/libary/booking_detail/svg/close-circle.svg")
+}
+
+.img-bg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    position: relative;
+    padding-bottom: 100%;
+}

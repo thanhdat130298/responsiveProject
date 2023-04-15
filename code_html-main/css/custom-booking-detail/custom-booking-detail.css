@@ -1,0 +1,226 @@
+/* custom form contact  */
+.form-contact {
+  padding: 24px;
+
+  background: #FFFFFF;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+.form-contact-input {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+  width: 100%;
+  color: var(--grayscale-900);
+  background-color: var(--grayscale-50);
+  padding: 0px;
+  border: none;
+  caret-color: var(--main-secondary);
+}
+
+.form-contact-input:focus {
+  border: none !important;
+  outline: none;
+}
+
+.form-contact-input::placeholder {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+  color: var(--grayscale-900);
+}
+
+/* custom selection card0*/
+.card-option {
+  padding: 16px 0 12px 0;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  background-color: var(--other-white);
+  border-radius: 16px;
+}
+
+.prices-detail {
+  padding-top: 8px;
+  padding-bottom: 12px;
+}
+
+.your-choice-card-banner-image {
+  width: 100%;
+  height: auto;
+  filter: brightness(60%);
+}
+
+.room-preview-image {
+  position: relative;
+  width: 100%;
+  max-width: 120px;
+}
+
+.your-choice-card-button {
+  position: absolute;
+  left: 8px;
+  display: flex;
+  align-items: center;
+  top: 28px;
+  padding: 4px 8px;
+  border: 1px solid var(--grayscale-50);
+  border-radius: 8px;
+}
+.card-option.disable{
+  pointer-events: none;
+}
+
+.card-option-disable-container {
+  position: relative;
+}
+
+.card-option-disable {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(76, 77, 79, 0.8);
+  backdrop-filter: blur(1px);
+  border-radius: 16px;
+  top: 0;
+  padding: 42px 0;
+}
+
+.modal-edit-history{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal-edit-history-content {
+    background-color: var(--other-white);
+    margin: 5% auto;
+    padding: 32px;
+    border: 1px solid var(--grayscale-200);
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 766px;
+    border-radius: 24px;
+    overflow-y: hidden;
+}
+.current-orders {
+  padding: 16px;
+  background: var(--other-background-2);
+  border-radius: 16px;
+}
+
+.my-12px{
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.old-orders {
+  padding: 16px;
+  background: var(--other-background-2);
+  border-radius: 16px;
+  opacity: 0.4;
+}
+
+.edit-history {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  gap: 6px;
+  padding: 5px 0;
+  width: fit-content;
+}
+.edit-history:hover {
+  border-bottom: 1px solid var(--semantic-1);
+}
+
+.edit-review {
+  position: relative;
+}
+
+.arrow-down-edit-review-tooltip {
+  width: 0;
+  height: 0;
+  margin: 16px auto -24px auto;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--other-white);
+}
+
+.edit-review-tooltip {
+  visibility: hidden;
+  position: absolute;
+  width: fit-content;
+  z-index: 2;
+  min-width: 276px;
+  bottom: 0;
+  margin-bottom: 36px;
+  padding: 16px;
+  background: var(--other-white);
+  border-radius: 8px;
+  box-shadow: 0px -4px 16px -2px rgba(27, 33, 44, 0.12);
+}
+.edit-review-tooltip.active{
+  visibility: visible;
+}
+
+.edit-review_tooltip-position {
+  right: -20%;
+}
+
+.icon-edit, .icon-remove {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+  border-radius: 8px;
+  background: var(--other-white);
+  padding: 8px 0 8px 12px
+}
+
+.icon-edit:hover , .icon-remove:hover {
+  background: rgba(75, 146, 255, 0.1);
+}
+
+.icon-edit:focus, .icon-remove:focus {
+  background: rgba(75, 146, 255, 0.1);
+}
+
+.card-service {
+  cursor: pointer;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--other-line);
+}
+
+.card-service:hover {
+  border: 1px solid var(--semantic-1);
+}
+.card-service.active{
+  border: 1px solid var(--semantic-1);
+}
+
+.edit-orders:hover {
+  text-decoration: underline;
+}
+
+.divider-1px-w-full-other2{
+  width: 100%;
+  height: 1px;
+  background: var(--other-background-2);
+  margin: 8px 0;
+}
+
+.custom-option-choose{
+  display: none;
+}
+.custom-option-choose.active{
+  display: block;
+}

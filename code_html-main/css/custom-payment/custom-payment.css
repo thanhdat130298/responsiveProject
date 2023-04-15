@@ -1,0 +1,317 @@
+/* custom card ticket-payment */
+.card-ticket-payment {
+    padding: 24px;
+
+    background: var(--other-white);
+    border: 1px solid var(--grayscale-200);
+    border-radius: 8px;
+}
+
+.card-time {
+    padding: 12px 16px;
+
+    border: 1px solid var(--other-line);
+    border-radius: 8px;
+}
+
+.number-nights {
+
+    padding: 5px 12px;
+
+    border: 1px solid rgba(1, 34, 118, 0.05);
+    border-radius: 32px;
+}
+
+.number-guests {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 9px 0px;
+
+    border: 1px solid var(--other-line);
+    border-radius: 8px;
+}
+
+.number-guests span {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+
+    color: var(--grayscale-900);
+}
+
+.status-card {
+    margin-top: 24px;
+
+    background-color: var(--other-white);
+    border: 1px solid var(--other-line);
+    border-radius: 8px;
+}
+
+.status-card-warning {
+    border-left: 8px solid var(--system-warning);
+    border-radius: 8px 0px 0px 8px;
+}
+
+.status-card-expire {
+    border-left: 8px solid var(--system-error);
+    border-radius: 8px 0px 0px 8px;
+}
+
+.status-card-success {
+    border-left: 8px solid var(--system-success);
+    border-radius: 8px 0px 0px 8px;
+}
+
+.status-payment {
+    display: flex;
+    justify-content: space-between;
+
+    padding-left: 12px;
+    padding-right: 16px;
+
+    background-color: var(--grayscale-50);
+}
+
+.status-payment-info {
+    display: flex;
+    align-items: center;
+    padding: 16px 8px 16px 12px;
+}
+
+.button-payment {
+
+    padding-top: 11px;
+    padding-bottom: 11px;
+
+    width: 100%;
+    text-align: center;
+
+    border: 1px solid var(--main-secondary);
+    border-radius: 8px;
+}
+
+.button-payment:hover {
+    background-color: var(--secondary-100);
+}
+
+.button-payment:focus {
+    background-color: var(--secondary-200);
+}
+
+
+.modal-qr {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal-qr-content {
+    background-color: var(--other-white);
+
+    margin: 5% auto;
+    padding: 24px 0px;
+
+    width: 80%;
+    max-width: 512px;
+
+    box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.1), 0px 8px 8px -4px rgba(16, 24, 40, 0.04);
+    border-radius: 12px;
+}
+
+.card-rate {
+    margin-top: 10px;
+    padding: 16px 16px 12px 16px;
+
+    background: var(--other-white);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+.modal-confirm-payment {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-confirm-payment-content {
+    position: relative;
+    margin: 5% auto;
+    padding-top: 24px;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 585px;
+    border-radius: 24px;
+    overflow-y: hidden;
+    background-color: var(--other-white);
+}
+
+.text-confirm {
+    padding: 0 60px 60px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.illu-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.illu-2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+}
+
+.button-order-detail {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+
+    color: var(--other-white);
+
+    min-width: 220px;
+
+    padding: 12px 0px;
+    background: linear-gradient(227.99deg, #FF972F 0%, #FF6B00 96.21%);
+    border-radius: 8px;
+}
+
+.button-order-detail:hover {
+    box-shadow: 0px 4px 12px rgba(246, 108, 31, 0.34);
+}
+
+.button-order-detail:focus {
+    background: var(--main-secondary);
+}
+
+.card-payment-status {
+    padding: 24px;
+    height: fit-content;
+
+    background: var(--other-white);
+    border: 1px solid var(--other-line);
+    border-radius: 16px;
+}
+
+.divider-card-payment {
+    width: 100%;
+    height: 1px;
+
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23E5E7EBFF' stroke-width='4' stroke-dasharray='2%2c 20' stroke-dashoffset='7' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+.section-checkin-qr {
+    margin-top: 24px;
+    padding: 24px;
+
+    background: var(--other-white);
+
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+
+}
+
+.modal-confirm-cancel {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.modal-confirm-cancel-content{
+
+    margin: 5% auto;
+    padding: 32px 0px;
+    width: 80%;
+    max-width: 555px;
+
+    overflow-y: hidden;
+
+    background-color: var(--other-white);
+    box-shadow: 0px 64px 64px -48px rgba(31, 47, 70, 0.12);
+    border-radius: 16px;
+}
+
+.button-confirm-cancel {
+    text-align: center;
+    width: 100%;
+    padding: 12px 0px;
+    background: linear-gradient(227.99deg, #FF972F 0%, #FF6B00 96.21%);
+    border-radius: 8px;
+}
+.button-confirm-cancel:hover {
+    box-shadow: 0px 4px 12px rgba(246, 108, 31, 0.34);
+}
+
+.button-confirm-cancel:focus {
+    background: var(--main-secondary);
+}
+
+.px-75px {
+    padding: 0 75px;
+}
+
+.px-129px {
+    padding: 0 129px;
+}
+
+.details-booking {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+
+    color: var(--semantic-1);
+}
+
+.details-booking:hover {
+    color: var(--semantic-1);
+    text-decoration: underline;
+}
+
+.grid-service {
+    display: grid;
+  grid-template-columns: auto auto auto ;
+  grid-gap: 24px;
+}
+
+.button_use-services {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    gap: 8px;
+    
+}

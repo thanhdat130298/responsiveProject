@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/custom-modal_room-detail/custom-modal.css" rel="stylesheet">
+    <!-- datepicker style -->
+    <link href="/css/date-range-picker.css" rel="stylesheet">
+    <!-- date range picker -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+</head>
+
+<body>
+    <div class="services-booking-modal" id="services-booking-modal" name="services-booking-modal"
+        style="display: block;">
+        <div class="services-booking-modal-content">
+            <div class="d-flex justify-content-between pt-4 position_close-modal-top">
+                <span class="heading-5 text-greyscale-900">Thông tin dịch vụ</span>
+                <button type="close" class="body-16-medium text-greyscale-900 padding-none">
+                    <img src="/libary/svg/CloseCircle-Modal-black.svg" alt="">
+                </button>
+            </div>
+
+            <div class="d-flex gap-24px mt-32px">
+                <img src="/libary/room_detail/service-booking-modal/showcase-image.png" alt="">
+                <div class="d-flex flex-column gap-16px">
+                    <span class="heading-4 text-greyscale-900">Body and Soul spa</span>
+                    <span class="body-16-bold text-greyscale-700">Thông tin chung</span>
+                    <span class="body-16-medium text-greyscale-500">Dịch vụ chăm sóc da mặt – thư giãn bạn có
+                        thể tìm thấy ở bất kỳ một Spa nào. Đây là dịch vụ
+                        Spa
+                        được khách hàng yêu thích nhất tại các Spa hiện nay. Đặc biệt là phụ nữ ngoài 30. Nếu không
+                        chăm
+                        sóc
+                        da kỹ lưỡng rất dễ hình thành nám, tàn nhang, da chảy xệ…</span>
+                </div>
+            </div>
+
+            <!-- form -->
+            <div class="mt-32px">
+                <span class="heading-5 text-greyscale-900">Thông tin đăng kí</span>
+            </div>
+            <form action="" id="" class="d-flex flex-wrap gap-16px mt-24px" name="">
+                <div class="w-50-gap-16">
+                    <label for="body-14-medium text-greyscale-700 mr-4px">Ngày dự kiến <span
+                            class="text-error">*</span></label>
+                            <label for="contact-dob"
+                            class="time-services mt-6px">
+                            <input id="contact-dob" type="text" name="datefilter" class="input-100-grey-50-radius-8 body-16-medium text-greyscale-900"
+                                value="" />
+                            <img src="/libary/svg/calendar-plus.svg" alt="">
+                        </label>
+                </div>
+                <div class="w-50-gap-16">
+                    <label for="body-14-medium text-greyscale-700 mr-4px">Số trẻ em <span
+                            class="text-error">*</span></label>
+                    <input type="text" name="" id=""
+                        class="input-100-grey-50-radius-8 body-16-medium text-greyscale-900 mt-6px"
+                        placeholder="Nhập ghi chú">
+                </div>
+                <div class="w-50-gap-16">
+                    <label for="body-14-medium text-greyscale-700 mr-4px">Số người lớn <span
+                            class="text-error">*</span></label>
+                    <input type="text" name="" id=""
+                        class="input-100-grey-50-radius-8 body-16-medium text-greyscale-900 mt-6px"
+                        placeholder="Nhập ghi chú">
+                </div>
+                <div class="w-50-gap-16">
+                    <label for="body-14-medium text-greyscale-700 mr-4px">Số người lớn <span
+                            class="text-error">*</span></label>
+                    <input type="text" name="" id=""
+                        class="input-100-grey-50-radius-8 body-16-medium text-greyscale-900 mt-6px"
+                        placeholder="Nhập ghi chú">
+                </div>
+
+                <div class="w-100 d-flex justify-content-center p-3 mt-3">
+                    <button id="" name="" type="submit"
+                        class="button-50-semantic-1-rounder-8 text-white body-16-bold">Chọn dịch vụ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/date-range-picker.js"></script>
+</body>
+
+</html>

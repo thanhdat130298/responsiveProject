@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/image-carousel.css" rel="stylesheet" href="">
+    <link href="/css/custom-modal.css" rel="stylesheet">
+    <link href="/css/custom-modal_room-detail/custom-modal.css" rel="stylesheet">
+    <!-- plugin css -->
+    <link href="/node_modules/@splidejs/splide/dist/css/splide.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+
+            <!-- modal component xem tất cả ảnh -->
+            <div class="thumbnial-slide-modal" id="thumbnial-slide-modal" name="thumbnial-slide-modal" style="display: block;">
+                <div class="thumbnial-slide-modal-content hide-scroll-bar">
+                    <!-- title -->
+                    <div class="d-flex justify-content-between">
+                        <span class="heading-3 text-greyscale-900">Tất cả hình ảnh</span>
+                        <button type="close" class="body-16-medium text-greyscale-900 padding-none">
+                            <img src="/libary/svg/CloseCircle-Modal-black.svg" alt="">
+                        </button>
+                    </div>
+
+                    <div id="main-carousel" class="splide mt-16px rounded-t-24px">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-1.png" class="" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-2.png" class="" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-3.png" class="" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-4.png" class="" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-5.png" class="" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-6.png" class="" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-1.png" class="" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-2.png" class="" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-3.png" class="" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-4.png" class="" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-5.png" class="" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-6.png" class="" alt="">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- subcontent -->
+                    <div class="big-image-subcontent">
+                        <span class="body-16-bold text-white">Biệt thự cả căn</span>
+                        <span id="" name="" class="body-16-bold text-white">5/40</span>
+                    </div>
+                    <!-- nav slide show -->
+                    <div class="d-flex gap-16px mt-24px">
+                        <div id="all-image" class="nav-carousel active">
+                            <span class="body-14-bold text-greyscale-700">Tất cả ảnh (<span id="">40</span>)</span>
+                        </div>
+                        <div id="villa-full" class="nav-carousel" onclick="showVilla()">
+                            <span class="body-14-bold text-greyscale-700">Biệt thự cả căn (<span id="">10</span>)</span>
+                        </div>
+                        <div id="rose-house" class="nav-carousel">
+                            <span class="body-14-bold text-greyscale-700">Phòng Hoa hồng (<span id="">10</span>)</span>
+                        </div>
+                        <div id="sun-flower-house" class="nav-carousel">
+                            <span class="body-14-bold text-greyscale-700">Phòng Hoa hướng dương (<span
+                                    id="">10</span>)</span>
+                        </div>
+                        <div id="chrysanthemum-flower-house" class="nav-carousel">
+                            <span class="body-14-bold text-greyscale-700">Phòng Hoa cúc (<span id="">10</span>)</span>
+                        </div>
+                    </div>
+
+                    <div id="thumbnail-carousel" class="splide mt-24px">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-1-thumbnail.png" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-2-thumbnail.png" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-3-thumbnail.png" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-4-thumbnail.png" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-5-thumbnail.png" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-6-thumbnail.png" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-1-thumbnail.png" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-2-thumbnail.png" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-3-thumbnail.png" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-4-thumbnail.png" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-5-thumbnail.png" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/libary/test/test-6-thumbnail.png" alt="">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Plugins script JS -->
+    <script src="/node_modules/@splidejs/splide/dist/js/splide.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var main = new Splide('#main-carousel', {
+                type: 'fade',
+                rewind: true,
+                pagination: false,
+                arrows: true,
+                interval: 3000,
+            });
+
+            var thumbnails = new Splide('#thumbnail-carousel', {
+                fixedWidth: 130,
+                fixedHeight: 100,
+                gap: 20,
+                rewind: true,
+                pagination: false,
+                isNavigation: true,
+                arrows: false,
+                interval: 3000,
+            });
+
+            main.sync(thumbnails);
+            main.mount();
+            thumbnails.mount();
+        });
+    </script>
+
+</body>
+
+</html>

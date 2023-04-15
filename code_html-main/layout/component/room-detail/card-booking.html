@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- page title change in here -->
+    <title>On the go</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/header-footer.css" rel="stylesheet">
+    <link href="/css/room-details/card-booking.css" rel="stylesheet">
+
+    <!-- date range picker -->
+    <link href="/css/date-range-picker.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- main content -->
+        <div class="container min-h-55vh d-flex flex-wrap gap-40px py-80px">
+            <!-- card chưa chọn, button disable  -->
+            <div class="detail-w-40-calc">
+                <div class="card-booking">
+
+                    <!-- price from -->
+                    <div class="d-flex align-items-baseline gap-4px">
+                        <span class="body-16-medium text-greyscale-400">Chỉ từ</span>
+                        <span class="heading-4 text-greyscale-900">1.540.000đ</span>
+                        <span class="body-16-medium text-greyscale-400">/đêm</span>
+                    </div>
+
+                    <!-- date ranger picker -->
+                    <div class="mt-16px d-flex flex-wrap justify-content-between gap-16px position-relative">
+                        <label for="time-ranger" class="date-start-ranger">
+                            <img src="/libary/booking/svg/calendar-plus.svg" class="" alt="">
+                            <span id="start-date-output" class="body-16-medium text-greyscale-900">18/11/2022</span>
+                        </label>
+                        <label for="time-ranger" class="date-end-ranger">
+                            <img src="/libary/booking/svg/calendar-close.svg" class="" alt="">
+                            <span id="end-date-output" class="body-16-medium text-greyscale-900">20/11/2022</span>
+                        </label>
+                        <!-- label for this input from date range picker -->
+                        <input id="time-ranger" type="text" name="datefilter" class="position-absolute" value=""
+                            style="bottom: 0; right: 0; visibility: hidden;" />
+                    </div>
+
+                    <!-- user member check -->
+                    <div class="mt-12px">
+                        <div class="member-person">
+                            <img src="/libary/booking/svg/user-check.svg" class="" alt="">
+                            <span class="body-16-medium text-greyscale-900">4 người lớn - 2 trẻ em</span>
+                        </div>
+                    </div>
+
+                    <!-- notes -->
+                    <div class="mt-24px">
+                        <span class="notes-font">Bạn sẽ không bị tính phí ngay</span>
+                    </div>
+
+                    <!-- payment details -->
+                    <div class="mt-24px">
+                        <span class="body-18-bold text-greyscale-900">Chi tiết thanh toán</span>
+                        <!-- price per night -->
+                        <div class="d-flex flex-wrap mt-16px">
+                            <div class="w-50 text-left">
+                                <span class="body-16-medium text-greyscale-500">1,540,000 x 5 đêm</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-16-medium text-greyscale-700">7,700,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- price service -->
+                        <div class="d-flex flex-wrap mt-12px">
+                            <div class="w-50 text-left">
+                                <span class="body-16-medium text-greyscale-500">Phí dịch vụ</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-16-medium text-greyscale-700">400,000đ</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-16px coupon-input">
+                            <div class="d-flex align-items-center gap-6px">
+                                <img src="/libary/booking/svg/discount.svg" class="" alt="">
+                                <span class="body-16-regular text-greyscale-400">Mã giảm giá</span>
+                            </div>
+                            <button id="" class="body-16-medium text-semantic-1">
+                                Áp dụng
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- total payment -->
+                    <div class="mt-24px">
+                        <div class="d-flex flex-wrap">
+                            <div class="w-50 text-left">
+                                <span class="body-18-bold text-greyscale-900">Tổng thanh toán</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-18-bold text-greyscale-900">8,100,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- button submit disable -->
+                    <div class="mt-16px">
+                        <button id="" class="button-disable body-16-bold text-greyscale-50">Đặt ngay</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card đã chọn, button primary liner -->
+            <div class="detail-w-40-calc">
+                <div class="card-booking">
+
+                    <!-- price from -->
+                    <div class="d-flex align-items-baseline gap-4px">
+                        <span class="body-16-medium text-greyscale-400">Chỉ từ</span>
+                        <span class="heading-4 text-greyscale-900">1.540.000đ</span>
+                        <span class="body-16-medium text-greyscale-400">/đêm</span>
+                    </div>
+
+                    <!-- date ranger picker -->
+                    <div class="mt-16px d-flex flex-wrap justify-content-between gap-16px position-relative">
+                        <label for="time-ranger" class="date-start-ranger">
+                            <img src="/libary/booking/svg/calendar-plus.svg" class="" alt="">
+                            <span id="start-date-output" class="body-16-medium text-greyscale-900">18/11/2022</span>
+                        </label>
+                        <label for="time-ranger" class="date-end-ranger">
+                            <img src="/libary/booking/svg/calendar-close.svg" class="" alt="">
+                            <span id="end-date-output" class="body-16-medium text-greyscale-900">20/11/2022</span>
+                        </label>
+                        <!-- label for this input from date range picker -->
+                        <input id="time-ranger" type="text" name="datefilter" class="position-absolute" value=""
+                            style="bottom: 0; right: 0; visibility: hidden;" />
+                    </div>
+
+                    <!-- user member check -->
+                    <div class="mt-12px">
+                        <div class="member-person">
+                            <img src="/libary/booking/svg/user-check.svg" class="" alt="">
+                            <span class="body-16-medium text-greyscale-900">4 người lớn - 2 trẻ em</span>
+                        </div>
+                    </div>
+
+                    <!-- your choice house -->
+                    <div class="mt-24px">
+                        <!-- your choice house and person -->
+                        <span class="body-18-bold text-greyscale-900">Lựa chọn của bạn</span>
+                        <div class="mt-16px d-flex flex-wrap gap-8px">
+                            <img src="/libary/booking/booking-card/card-room-booking.png" class=""
+                                style="width: 56px; height: 44px;" alt="">
+
+                            <div class="">
+                                <div class="">
+                                    <span class="body-16-bold text-greyscale-500">1 x</span>
+                                    <span class="body-16-bold text-greyscale-900">Biệt thự cả căn</span>
+                                </div>
+
+                                <div class="d-flex flex-wrap gap-12px mt-2px">
+                                    <div class="d-flex gap-2px">
+                                        <span class="body-14-medium text-greyscale-500">Người lớn:</span>
+                                        <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                    </div>
+                                    <div class="d-flex gap-2px">
+                                        <span class="body-14-medium text-greyscale-500">trẻ em:</span>
+                                        <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                    </div>
+                                    <div class="d-flex gap-2px">
+                                        <span class="body-14-medium text-greyscale-500">Giường phụ:</span>
+                                        <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                    </div>
+                                </div>
+                                <div class="mt-4px">
+                                    <button type="" id="" class="body-14-bold text-error">Bỏ chọn</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- price per room -->
+                    <div class="price-per-room">
+                        <!-- price -->
+                        <div class="d-flex flex-wrap">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Giá phòng (1 phòng x 3 đêm)</span>
+                            </div>
+                            <div class="w-50 d-flex align-items-center justify-content-end gap-2px">
+                                <img src="/libary/booking/svg/info.svg" class="" alt="">
+                                <span class="body-14-medium text-greyscale-700">4,620,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- extend adult -->
+                        <div class="d-flex flex-wrap mt-6px">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Phụ thu người lớn</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-14-medium text-greyscale-700">600,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- extend child -->
+                        <div class="d-flex flex-wrap mt-6px">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Phụ thu trẻ em</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-14-medium text-greyscale-700">600,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- extend service -->
+                        <div class="d-flex flex-wrap mt-6px">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Phí dịch vụ</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-14-medium text-greyscale-700">400,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- pax fee -->
+                        <div class="d-flex flex-wrap mt-6px">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Thuế</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-14-medium text-greyscale-700">622,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- payment details -->
+                    <div class="mt-24px">
+                        <span class="body-18-bold text-greyscale-900">Chi tiết thanh toán</span>
+                        <!-- price per night -->
+                        <div class="d-flex flex-wrap mt-16px">
+                            <div class="w-50 text-left">
+                                <span class="body-16-medium text-greyscale-500">Giá phòng</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-16-medium text-greyscale-700">4,620,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- extend per adult -->
+                        <div class="d-flex flex-wrap mt-16px">
+                            <div class="w-50 text-left">
+                                <span class="body-16-medium text-greyscale-500">Phụ thu người lớn</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-16-medium text-greyscale-700">600,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- price per night -->
+                        <div class="d-flex flex-wrap mt-16px">
+                            <div class="w-50 text-left">
+                                <span class="body-16-medium text-greyscale-500">Phụ thu trẻ em</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-16-medium text-greyscale-700">1,800,000đ</span>
+                            </div>
+                        </div>
+                        <!-- price per night -->
+                        <div class="d-flex flex-wrap mt-16px">
+                            <div class="w-50 text-left">
+                                <span class="body-16-medium text-greyscale-500">Phụ thu giường phụ</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-16-medium text-greyscale-700">1,200,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- price service -->
+                        <div class="d-flex flex-wrap mt-12px">
+                            <div class="w-50 text-left">
+                                <span class="body-16-medium text-greyscale-500">Phí dịch vụ</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-16-medium text-greyscale-700">400,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- fax fee -->
+                        <div class="d-flex flex-wrap mt-12px">
+                            <div class="w-50 text-left">
+                                <span class="body-16-medium text-greyscale-500">Thuế</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-16-medium text-greyscale-700">502,000đ</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-16px coupon-input">
+                            <div class="d-flex align-items-center gap-6px">
+                                <img src="/libary/booking/svg/discount.svg" class="" alt="">
+                                <span class="body-16-regular text-greyscale-400">Mã giảm giá</span>
+                            </div>
+                            <button id="" class="body-16-medium text-semantic-1">
+                                Áp dụng
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- total payment -->
+                    <div class="mt-24px">
+                        <div class="d-flex flex-wrap">
+                            <div class="w-50 text-left">
+                                <span class="body-18-bold text-greyscale-900">Tổng thanh toán</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-18-bold text-greyscale-900">5,020,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- button submit disable -->
+                    <div class="mt-16px">
+                        <button id="" class="button-gradient body-16-bold text-greyscale-50">Đặt ngay</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card đã chọn 3x phòng, đã apply mã giảm giá vào -->
+            <div class="detail-w-40-calc">
+                <div class="card-booking">
+
+                    <!-- price from -->
+                    <div class="d-flex align-items-baseline gap-4px">
+                        <span class="body-16-medium text-greyscale-400">Chỉ từ</span>
+                        <span class="heading-4 text-greyscale-900">1.540.000đ</span>
+                        <span class="body-16-medium text-greyscale-400">/đêm</span>
+                    </div>
+
+                    <!-- date ranger picker -->
+                    <div class="mt-16px d-flex flex-wrap justify-content-between gap-16px position-relative">
+                        <label for="time-ranger" class="date-start-ranger">
+                            <img src="/libary/booking/svg/calendar-plus.svg" class="" alt="">
+                            <span id="start-date-output" class="body-16-medium text-greyscale-900">18/11/2022</span>
+                        </label>
+                        <label for="time-ranger" class="date-end-ranger">
+                            <img src="/libary/booking/svg/calendar-close.svg" class="" alt="">
+                            <span id="end-date-output" class="body-16-medium text-greyscale-900">20/11/2022</span>
+                        </label>
+                        <!-- label for this input from date range picker -->
+                        <input id="time-ranger" type="text" name="datefilter" class="position-absolute" value=""
+                            style="bottom: 0; right: 0; visibility: hidden;" />
+                    </div>
+
+                    <!-- user member check -->
+                    <div class="mt-12px">
+                        <div class="member-person">
+                            <img src="/libary/booking/svg/user-check.svg" class="" alt="">
+                            <span class="body-16-medium text-greyscale-900">4 người lớn - 2 trẻ em</span>
+                        </div>
+                    </div>
+
+                    <!-- your choice house -->
+                    <div class="mt-24px">
+                        <!-- your choice house and person -->
+                        <span class="body-18-bold text-greyscale-900">Lựa chọn của bạn</span>
+                        <div class="mt-16px d-flex flex-wrap gap-8px">
+                            <img src="/libary/booking/booking-card/card-room-booking.png" class=""
+                                style="width: 56px; height: 44px;" alt="">
+
+                            <div class="">
+                                <div class="">
+                                    <span class="body-16-bold text-greyscale-500">1 x</span>
+                                    <span class="body-16-bold text-greyscale-900">Biệt thự cả căn</span>
+                                </div>
+
+                                <div class="d-flex flex-wrap gap-12px mt-2px">
+                                    <div class="d-flex gap-2px">
+                                        <span class="body-14-medium text-greyscale-500">Người lớn:</span>
+                                        <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                    </div>
+                                    <div class="d-flex gap-2px">
+                                        <span class="body-14-medium text-greyscale-500">trẻ em:</span>
+                                        <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                    </div>
+                                    <div class="d-flex gap-2px">
+                                        <span class="body-14-medium text-greyscale-500">Giường phụ:</span>
+                                        <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                    </div>
+                                </div>
+                                <div class="mt-4px">
+                                    <button type="" id="" class="body-14-bold text-error">Bỏ chọn</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- price per room -->
+                    <div class="price-per-room">
+                        <!-- price -->
+                        <div class="d-flex flex-wrap">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Giá phòng (1 phòng x 3 đêm)</span>
+                            </div>
+                            <div class="w-50 d-flex align-items-center justify-content-end gap-2px">
+                                <img src="/libary/booking/svg/info.svg" class="" alt="">
+                                <span class="body-14-medium text-greyscale-700">4,620,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- extend adult -->
+                        <div class="d-flex flex-wrap mt-6px">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Phụ thu người lớn</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-14-medium text-greyscale-700">600,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- extend child -->
+                        <div class="d-flex flex-wrap mt-6px">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Phụ thu trẻ em</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-14-medium text-greyscale-700">600,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- extend service -->
+                        <div class="d-flex flex-wrap mt-6px">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Phí dịch vụ</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-14-medium text-greyscale-700">400,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- pax fee -->
+                        <div class="d-flex flex-wrap mt-6px">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Thuế</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-14-medium text-greyscale-700">622,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- your choice house 1 -->
+                    <div class="mt-24px">
+                        <!-- your choice house and person -->
+                        <div class="mt-16px d-flex flex-wrap gap-8px">
+                            <img src="/libary/booking/booking-card/card-room-booking.png" class=""
+                                style="width: 56px; height: 44px;" alt="">
+
+                            <div class="">
+                                <div class="">
+                                    <span class="body-16-bold text-greyscale-500">1 x</span>
+                                    <span class="body-16-bold text-greyscale-900">Biệt thự cả căn 1</span>
+                                </div>
+
+                                <div class="d-flex flex-wrap gap-12px mt-2px">
+                                    <div class="d-flex gap-2px">
+                                        <span class="body-14-medium text-greyscale-500">Người lớn:</span>
+                                        <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                    </div>
+                                    <div class="d-flex gap-2px">
+                                        <span class="body-14-medium text-greyscale-500">trẻ em:</span>
+                                        <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                    </div>
+                                    <div class="d-flex gap-2px">
+                                        <span class="body-14-medium text-greyscale-500">Giường phụ:</span>
+                                        <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                    </div>
+                                </div>
+                                <div class="mt-4px">
+                                    <button type="" id="" class="body-14-bold text-error">Bỏ chọn</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- price per room 1 -->
+                    <div class="price-per-room">
+                        <!-- price -->
+                        <div class="d-flex flex-wrap">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Giá phòng (1 phòng x 3 đêm)</span>
+                            </div>
+                            <div class="w-50 d-flex align-items-center justify-content-end gap-2px">
+                                <img src="/libary/booking/svg/info.svg" class="" alt="">
+                                <span class="body-14-medium text-greyscale-700">4,620,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- extend adult -->
+                        <div class="d-flex flex-wrap mt-6px">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Phụ thu người lớn</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-14-medium text-greyscale-700">600,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- extend child -->
+                        <div class="d-flex flex-wrap mt-6px">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Phụ thu trẻ em</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-14-medium text-greyscale-700">600,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- extend service -->
+                        <div class="d-flex flex-wrap mt-6px">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Phí dịch vụ</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-14-medium text-greyscale-700">400,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- pax fee -->
+                        <div class="d-flex flex-wrap mt-6px">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Thuế</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-14-medium text-greyscale-700">622,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- your choice house 2 -->
+                    <div class="mt-24px">
+                        <!-- your choice house and person -->
+                        <div class="mt-16px d-flex flex-wrap gap-8px">
+                            <img src="/libary/booking/booking-card/card-room-booking.png" class=""
+                                style="width: 56px; height: 44px;" alt="">
+
+                            <div class="">
+                                <div class="">
+                                    <span class="body-16-bold text-greyscale-500">1 x</span>
+                                    <span class="body-16-bold text-greyscale-900">Biệt thự cả căn 2</span>
+                                </div>
+
+                                <div class="d-flex flex-wrap gap-12px mt-2px">
+                                    <div class="d-flex gap-2px">
+                                        <span class="body-14-medium text-greyscale-500">Người lớn:</span>
+                                        <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                    </div>
+                                    <div class="d-flex gap-2px">
+                                        <span class="body-14-medium text-greyscale-500">trẻ em:</span>
+                                        <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                    </div>
+                                    <div class="d-flex gap-2px">
+                                        <span class="body-14-medium text-greyscale-500">Giường phụ:</span>
+                                        <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                    </div>
+                                </div>
+                                <div class="mt-4px">
+                                    <button type="" id="" class="body-14-bold text-error">Bỏ chọn</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- price per room 2 -->
+                    <div class="price-per-room">
+                        <!-- price -->
+                        <div class="d-flex flex-wrap">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Giá phòng (1 phòng x 3 đêm)</span>
+                            </div>
+                            <div class="w-50 d-flex align-items-center justify-content-end gap-2px">
+                                <img src="/libary/booking/svg/info.svg" class="" alt="">
+                                <span class="body-14-medium text-greyscale-700">4,620,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- extend adult -->
+                        <div class="d-flex flex-wrap mt-6px">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Phụ thu người lớn</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-14-medium text-greyscale-700">600,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- extend child -->
+                        <div class="d-flex flex-wrap mt-6px">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Phụ thu trẻ em</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-14-medium text-greyscale-700">600,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- extend service -->
+                        <div class="d-flex flex-wrap mt-6px">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Phí dịch vụ</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-14-medium text-greyscale-700">400,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- pax fee -->
+                        <div class="d-flex flex-wrap mt-6px">
+                            <div class="w-50 text-left">
+                                <span class="body-14-medium text-greyscale-500">Thuế</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-14-medium text-greyscale-700">622,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- payment details -->
+                    <div class="mt-24px">
+                        <span class="body-18-bold text-greyscale-900">Chi tiết thanh toán</span>
+                        <!-- price per night -->
+                        <div class="d-flex flex-wrap mt-16px">
+                            <div class="w-50 text-left">
+                                <span class="body-16-medium text-greyscale-500">Giá phòng</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-16-medium text-greyscale-700">4,620,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- extend per adult -->
+                        <div class="d-flex flex-wrap mt-16px">
+                            <div class="w-50 text-left">
+                                <span class="body-16-medium text-greyscale-500">Phụ thu người lớn</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-16-medium text-greyscale-700">600,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- price per night -->
+                        <div class="d-flex flex-wrap mt-16px">
+                            <div class="w-50 text-left">
+                                <span class="body-16-medium text-greyscale-500">Phụ thu trẻ em</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-16-medium text-greyscale-700">1,800,000đ</span>
+                            </div>
+                        </div>
+                        <!-- price per night -->
+                        <div class="d-flex flex-wrap mt-16px">
+                            <div class="w-50 text-left">
+                                <span class="body-16-medium text-greyscale-500">Phụ thu giường phụ</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-16-medium text-greyscale-700">1,200,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- price service -->
+                        <div class="d-flex flex-wrap mt-12px">
+                            <div class="w-50 text-left">
+                                <span class="body-16-medium text-greyscale-500">Phí dịch vụ</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-16-medium text-greyscale-700">400,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- fax fee -->
+                        <div class="d-flex flex-wrap mt-12px">
+                            <div class="w-50 text-left">
+                                <span class="body-16-medium text-greyscale-500">Thuế</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-16-medium text-greyscale-700">502,000đ</span>
+                            </div>
+                        </div>
+
+                        <!-- discount price -->
+                        <div class="d-flex flex-wrap mt-12px">
+                            <div class="w-50 text-left">
+                                <span class="body-16-medium text-greyscale-500">Giảm giá</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-16-medium text-success">-400,000đ</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-16px coupon-input">
+                            <div class="d-flex align-items-center gap-6px">
+                                <img src="/libary/booking/svg/discount.svg" class="" alt="">
+                                <span class="body-16-regular text-greyscale-400">Mã giảm giá</span>
+                            </div>
+
+                            <!-- discount code -->
+                            <button id="" class="body-16-medium text-semantic-1">
+                                <span id="" class="discount-code" for="">GIAMGIA2010BC1</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- total payment -->
+                    <div class="mt-24px">
+                        <div class="d-flex flex-wrap">
+                            <div class="w-50 text-left">
+                                <span class="body-18-bold text-greyscale-900">Tổng thanh toán</span>
+                            </div>
+                            <div class="w-50 text-right">
+                                <span class="body-18-bold text-greyscale-900">15,020,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- button submit disable -->
+                    <div class="mt-16px">
+                        <button id="" class="button-gradient body-16-bold text-greyscale-50">Đặt ngay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let languageCurrencyButton = document.getElementById("language-currency-button");
+        let languageCurrencyDropdown = document.getElementById("language-currency-dropdown");
+
+        languageCurrencyButton.onclick = function () {
+            languageCurrencyDropdown.style.display = "flex";
+        }
+
+        window.onclick = function (event_click) {
+            if (event_click.target == languageCurrencyDropdown) {
+                languageCurrencyDropdown.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- date range picker script -->
+    <script src="/js/date-range-picker.js"></script>
+
+</body>
+
+</html>

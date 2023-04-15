@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/css/main.css" rel="stylesheet" />
+    <!-- lato font https://fonts.google.com/specimen/Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        ,rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-between">
+            <!-- custom checkbox -->
+            <!-- id label for input check -->
+            <div class="d-flex">
+                <div style="width: 36px; position: relative; scale: 0.8;">
+                    <div class="group-checkbox">
+                        <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                        <label for="checkbox-1"></label>
+                    </div>
+                </div>
+                <div class="">
+                    <label for="checkbox-1">text or content</label>
+                </div>
+            </div>
+
+            <!-- custom input radio box -->
+            <div class="flex flex-col gap-16px">
+                <input type="radio" name="radio" id="" checked />
+                <input type="radio" name="radio" id="" />
+                <input type="radio" name="radio" id="" disabled />
+            </div>
+
+        </div>
+
+        <!-- button width 50% -->
+        <div class="d-flex flex-row gap-16px mt-32px">
+            <button id="" class="button-50-bg-white-rounder-8 body-16-bold text-main-secondary" name="">text</button>
+            <button id="" class="button-50-bg-main-rounder-8 body-16-bold text-white" name="">text</button>
+        </div>
+
+        <!-- input field width 100% -->
+
+        <div class="">
+            <div class="">
+                <input type="text" name="" id="" class="input-100-grey-50-radius-8" placeholder="Nhập ghi chú">
+            </div>
+
+            <!-- input increment decrement with number inside -->
+            <div class="">
+                <div class="increment-decrement">
+                    <button id="" class="">
+                        <img src="/libary/booking/svg/circle-decrement.svg" id="" class="" alt="">
+                    </button>
+                    <span id="" class="">4</span>
+                    <button id="" class="">
+                        <img src="/libary/booking/svg/circle-increment.svg" id="" class="" alt="">
+                    </button>
+                </div>
+            </div>
+
+            <div class="w-50 d-flex align-items-center justify-content-end gap-2px position-relative">
+                <img src="/libary/booking/svg/info.svg" class="open-tooltip" alt="">
+                <span class="body-14-medium text-greyscale-700">4,620,000đ</span>
+
+                <!-- modal tool tip -->
+                <div class="modal-hover-upper-content modal-hover-upper-content-position-ticket"
+                    style="min-width: 458px;">
+                    <div class="">
+                        content
+                    </div>
+                    <!-- triangle bottom -->
+                    <div class="arrow-down-price-tooltip"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

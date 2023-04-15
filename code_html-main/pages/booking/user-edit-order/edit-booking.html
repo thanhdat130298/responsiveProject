@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- page title change in here -->
+    <title>Booking Details</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/header-footer.css" rel="stylesheet">
+    <link href="/css/room-details/card-booking.css" rel="stylesheet">
+    <link href="/css/custom-booking-detail/custom-booking-detail.css" rel="stylesheet">
+    <link href="/css/custom-edit-booking.css" rel="stylesheet">
+    <link href="/css/room-details/your-choice.css" rel="stylesheet">
+    <link href="/css/custom-modal_room-detail/custom-modal.css" rel="stylesheet">
+    <link href="/css/custom-modal.css" rel="stylesheet">
+    <link href="/css/custom-payment/custom-payment.css" rel="stylesheet">
+    <!-- date range picker -->
+    <link href="/css/date-range-picker.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header-drop-shadow">
+            <div class="container d-flex flex-wrap justify-content-between py-17px">
+                <!-- logo, nav -->
+                <div class="d-flex flex-wrap justify-content-between gap-40px align-items-center">
+                    <!-- logo link -->
+                    <a href="/pages" class="p-0 m-0 d-flex align-items-center">
+                        <img src="/libary/header_footer/Logo.png" class="" alt="logo" />
+                    </a>
+                    <!-- divider -->
+                    <div class="divider-y"></div>
+                    <!-- nav link -->
+                    <a href="/pages/searching-list-room.html" class="body-18-bold text-greyscale-500">
+                        Đặt phòng
+                    </a>
+                    <a href="/pages/news/" class="body-18-bold text-greyscale-500">
+                        Tin tức & Sự kiện
+                    </a>
+                </div>
+                <!-- support signin, notification -->
+                <div class="d-flex flex-wrap justify-content-between gap-24px align-items-center">
+                    <a href="/#" class="body-18-bold text-greyscale-500">
+                        Hỗ trợ
+                    </a>
+
+                    <!-- drop down select currency and language -->
+                    <div class="position-relative">
+                        <button class="language-currency-button" id="open_currency">
+                            <img src="/libary/header_footer/svg/global.svg" alt="">
+                            <span class="body-16-bold text-greyscale-500">VN/VND</span>
+                            <img src="/libary/svg/chevron-down.svg" alt="">
+                        </button>
+
+                        <div class="language-currency-dropdown" id="language-currency-dropdown">
+                            <div class="d-flex p-16px gap-16px">
+                                <img src="/libary/header_footer/svg/currency-arrow.svg" class="mini-arrow" alt="">
+                                <!-- language -->
+                                <div class="w-120px">
+                                    <span class="body-16-bold text-greyscale-500 w-100">
+                                        Ngôn ngữ
+                                    </span>
+                                    <div class="vietnamese">
+                                        <img src="/libary/header_footer/svg/vietnam.svg" alt="">
+                                        <span class="body-14-bold text-greyscale-900 ml-12px">Tiếng Việt</span>
+                                    </div>
+                                    <div class="english">
+                                        <img src="/libary/header_footer/svg/english.svg" alt="">
+                                        <span class="body-14-bold text-greyscale-400 ml-12px">English</span>
+                                    </div>
+                                </div>
+
+                                <!-- divider -->
+                                <div class="divider-y"></div>
+
+                                <!-- currentcy -->
+                                <div class="w-120px">
+                                    <span class="body-16-bold text-greyscale-500 w-100">
+                                        Tiền tệ
+                                    </span>
+                                    <ul class="currency-ul">
+                                        <li class="body-14-bold text-greyscale-900">VND</li>
+                                        <li class="body-14-bold text-greyscale-400">USD</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- button switch to host, button notification and button profile -->
+                    <!-- change when login or un-login -->
+                    <a href="/#" class="body-16-bold text-greyscale-900 button-switch-host">
+                        Switch to Host
+                    </a>
+
+                    <!-- notification icon -->
+                    <div class="position-relative">
+                        <div id="notification_button" class="cursor-pointer" onclick="openModalNotification()">
+                            <img src="/libary/header_footer/svg/notification.svg" alt="">
+                            <!-- number of notification -->
+                            <div class="notification-number">
+                                <span class="noti-number-in body-12-medium text-white">5</span>
+                            </div>
+                        </div>
+                        <!-- notification panel when click -->
+                        <div id="notification_modal" class="notification-panel-content">
+                            <img src="/libary/header_footer/svg/currency-arrow.svg" class="mini-arrow-right" alt="">
+                            <div class="notification-head">
+                                <div class="">
+                                    <span class="heading-4 text-greyscale-900">Thông báo</span>
+                                </div>
+                                <button id=""
+                                    class="d-flex align-items-center gap-4px body-14-medium text-greyscale-900" for="">
+                                    Đánh dấu tất cả là đã đọc
+                                    <img src="/libary/header_footer/svg/circle-check.svg" class="" alt="">
+                                </button>
+                            </div>
+
+                            <!-- notification row link -->
+                            <a href="#" class="notification-link">
+                                <div class="notification-row">
+                                    <!-- icon notification -->
+                                    <div class="notification-icon">
+                                        <div class="icon-for-noti" id="" name="" for="">
+                                            <img id="" src="/libary/header_footer/svg/notification-unread.svg" class=""
+                                                style="margin-top: -8px" name="" alt="">
+                                            <img id="" src="/libary/header_footer/svg/bell.svg" class="" name="" alt="">
+                                        </div>
+                                    </div>
+
+                                    <!-- content notification -->
+                                    <div class="notification-content">
+                                        <div class="">
+                                            <span id="" name="" for="" class="body-16-bold text-greyscale-900">Bảo
+                                                trì
+                                                hệ thống</span>
+                                        </div>
+                                        <div class="mt-8px">
+                                            <span id="" name="" for="" class="body-14-medium text-greyscale-900">Bảo
+                                                trì
+                                                hệ thống từ 20h
+                                                1/5/2022
+                                                đến 24h ngày 1/5/2022.</span>
+                                        </div>
+                                        <div class="mt-10px">
+                                            <span id="" name="" for="" class="body-12-medium text-semantic-1">10/05/2020
+                                                9:41</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notification-link">
+                                <div class="notification-row">
+                                    <!-- icon notification -->
+                                    <div class="notification-icon">
+                                        <div class="icon-for-noti" id="" name="" for="">
+                                            <img id="" src="/libary/header_footer/svg/notification-unread.svg" class=""
+                                                style="margin-top: -8px" name="" alt="">
+                                            <img id="" src="/libary/header_footer/svg/notification-cart.svg" class=""
+                                                name="" alt="">
+                                        </div>
+                                    </div>
+
+                                    <!-- content notification -->
+                                    <div class="notification-content">
+                                        <div class="">
+                                            <span id="" name="" for="" class="body-16-bold text-greyscale-900">Bảo
+                                                trì
+                                                hệ thống</span>
+                                        </div>
+                                        <div class="mt-8px">
+                                            <span id="" name="" for="" class="body-14-medium text-greyscale-900">Bảo
+                                                trì
+                                                hệ thống từ 20h
+                                                1/5/2022
+                                                đến 24h ngày 1/5/2022.</span>
+                                        </div>
+                                        <div class="mt-10px">
+                                            <span id="" name="" for="" class="body-12-medium text-semantic-1">10/05/2020
+                                                9:41</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notification-link">
+                                <div class="notification-row">
+                                    <!-- icon notification -->
+                                    <div class="notification-icon">
+                                        <div class="icon-for-noti" id="" name="" for="">
+                                            <img id="" src="/libary/header_footer/svg/notification-unread.svg"
+                                                class="d-none" style="margin-top: -8px" name="" alt="">
+                                            <img id="" src="/libary/header_footer/svg/notification-bag.svg" class=""
+                                                name="" alt="">
+                                        </div>
+                                    </div>
+
+                                    <!-- content notification -->
+                                    <div class="notification-content">
+                                        <div class="">
+                                            <span id="" name="" for="" class="body-16-bold text-greyscale-900">Bảo
+                                                trì
+                                                hệ thống</span>
+                                        </div>
+                                        <div class="mt-8px">
+                                            <span id="" name="" for="" class="body-14-medium text-greyscale-900">Bảo
+                                                trì
+                                                hệ thống từ 20h
+                                                1/5/2022
+                                                đến 24h ngày 1/5/2022.</span>
+                                        </div>
+                                        <div class="mt-10px">
+                                            <span id="" name="" for="" class="body-12-medium text-semantic-1">10/05/2020
+                                                9:41</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="notification-link">
+                                <div class="notification-row">
+                                    <!-- icon notification -->
+                                    <div class="notification-icon">
+                                        <div class="icon-for-noti" id="" name="" for="">
+                                            <img id="" src="/libary/header_footer/svg/notification-unread.svg" class=""
+                                                style="margin-top: -8px" name="" alt="">
+                                            <img id="" src="/libary/header_footer/svg/notification-bag.svg" class=""
+                                                name="" alt="">
+                                        </div>
+                                    </div>
+
+                                    <!-- content notification -->
+                                    <div class="notification-content">
+                                        <div class="">
+                                            <span id="" name="" for="" class="body-16-bold text-greyscale-900">Bảo
+                                                trì
+                                                hệ thống</span>
+                                        </div>
+                                        <div class="mt-8px">
+                                            <span id="" name="" for="" class="body-14-medium text-greyscale-900">Bảo
+                                                trì
+                                                hệ thống từ 20h
+                                                1/5/2022
+                                                đến 24h ngày 1/5/2022.</span>
+                                        </div>
+                                        <div class="mt-10px">
+                                            <span id="" name="" for="" class="body-12-medium text-semantic-1">10/05/2020
+                                                9:41</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- user avatar icon -->
+                    <div class="position-relative">
+                        <!-- user icon button -->
+                        <button id="open_profile" class="">
+                            <img src="/libary/header_footer/svg/user-avatar.svg" alt="">
+                        </button>
+                        <!-- user panel when click -->
+                        <div id="profile-drop-down" class="profile-drop-down">
+                            <div class="profile-wrapper-modal-content">
+                                <img src="/libary/header_footer/svg/currency-arrow.svg" class="mini-arrow-right" alt="">
+
+                                <div class="list-profile-nav">
+                                    <a href="#" class="profile-link-row">
+                                        <div class="link-tag-name">
+                                            <img src="/libary/homepage/svg/user.svg" alt="">
+                                            <span class="body-16-medium text-greyscale-500">Thông tin cá nhân</span>
+                                        </div>
+                                        <div class="link-notification-number isNull">
+                                            <span id="" class="body-14-bold text-white">1</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="profile-link-row">
+                                        <div class="link-tag-name">
+                                            <img src="/libary/homepage/svg/shopping-bag.svg" alt="">
+                                            <span class="body-16-medium text-greyscale-500">Danh sách đặt phòng</span>
+                                        </div>
+                                        <div class="link-notification-number isNull">
+                                            <span id="" class="body-14-bold text-white">1</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="profile-link-row">
+                                        <div class="link-tag-name">
+                                            <img src="/libary/homepage/svg/heart-subscriber.svg" alt="">
+                                            <span class="body-16-medium text-greyscale-500">Địa điểm yêu thích</span>
+                                        </div>
+                                        <div class="link-notification-number isNull">
+                                            <span id="" class="body-14-bold text-white">1</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="profile-link-row">
+                                        <div class="link-tag-name">
+                                            <img src="/libary/homepage/svg/messages-buble.svg" alt="">
+                                            <span class="body-16-medium text-greyscale-500">Địa điểm yêu thích</span>
+                                        </div>
+                                        <div class="link-notification-number">
+                                            <span id="" class="body-14-bold text-white">2</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="profile-link-row">
+                                        <div class="link-tag-name">
+                                            <img src="/libary/homepage/svg/award-comment.svg" alt="">
+                                            <span class="body-16-medium text-greyscale-500">Đánh giá</span>
+                                        </div>
+                                        <div class="link-notification-number isNull">
+                                            <span id="" class="body-14-bold text-white">1</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="profile-link-row">
+                                        <div class="link-tag-name">
+                                            <img src="/libary/homepage/svg/headphone-live-chat.svg" alt="">
+                                            <span class="body-16-medium text-greyscale-500">Hỗ trợ từ OTG</span>
+                                        </div>
+                                        <div class="link-notification-number">
+                                            <span id="" class="body-14-bold text-white">4</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="profile-link-row">
+                                        <div class="link-tag-name">
+                                            <img src="/libary/homepage/svg/guard-sercurity.svg" alt="">
+                                            <span class="body-16-medium text-greyscale-500">Bảo mật</span>
+                                        </div>
+                                        <div class="link-notification-number isNull">
+                                            <span id="" class="body-14-bold text-white">1</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+
+                                <div class="divider-x"></div>
+
+                                <div class="profile-avatar-email">
+                                    <div class="profile-avatar">
+                                        <img src="/libary/homepage/avatar/dropdown-avatar.png" alt="">
+                                    </div>
+                                    <div class="profile-email">
+                                        <span id="profile-name" class="body-16-medium text-greyscale-900">Nguyễn Văn
+                                            A</span>
+                                        <span id="profile-email"
+                                            class="body-14-regular text-greyscale-500">nguyenvana@gmail.com</span>
+                                    </div>
+                                </div>
+
+                                <a href="#" id="logout"
+                                    class="button-100-border-main-p-10-20-rounder-8 body-16-bold text-main-secondary"
+                                    name="">Đăng xuất</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- main content -->
+        <div class="container min-h-55vh">
+
+            <!-- bread crumb list -->
+            <div class="breadcrumb-pannel">
+                <ul class="breadcrumb">
+                    <li><a href="/"><img src="/libary/svg/home-breadcrumb.svg" alt=""></a></li>
+                    <li><img src="/libary/svg/chevron-right.svg" alt=""></li>
+                    <li><a href="#">Chi tiết phòng</a></li>
+                    <li><img src="/libary/svg/chevron-right.svg" alt=""></li>
+                    <li>Chi tiết đặt phòng</li>
+                </ul>
+            </div>
+            <!-- title head -->
+            <div class="mt-12px">
+                <span class="heading-4 text-greyscale-900">Chi tiết đặt phòng</span>
+            </div>
+
+            <!-- main content -->
+            <div class="d-flex gap-32px">
+                <div class="w-60 d-flex flex-column gap-32px" style="max-width: 670px;">
+
+                    <!-- first villa choose -->
+                    <div class="rounded-16px shadow-1">
+                        <div class="py-3 pl-3 pr-18px box-shadow-1 rounded-16px">
+                            <div class="d-flex">
+                                <!-- img -->
+                                <div>
+                                    <img src="/libary/booking_detail/selected-house/showcase-house-img.png" alt="">
+                                </div>
+                                <!-- info -->
+                                <div class="ml-4 w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex align-items-center">
+                                            <img src="/libary/booking_detail/svg/house.svg" alt="">
+                                            <span class="body-14-medium text-semantic-1 ml-1">Biệt thự</span>
+                                        </div>
+                                        <button class="body-14-bold text-semantic-1 edit-orders">Thay đổi
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <span class="heading-5 text-greyscale-900">Beverly Springfield</span>
+                                    </div>
+                                    <div class="d-flex mt-2 align-items-center gap-20px">
+                                        <div class="d-flex align-items-center">
+                                            <img src="/libary/booking_detail/svg/user.svg" alt="">
+                                            <span class="body-14-medium text-greyscale-900 ml-1">10 người</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="/libary/booking_detail/svg/home-2.svg" alt="">
+                                            <span class="body-14-medium text-greyscale-900 ml-1">5 phòng ngủ</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="/libary/booking_detail/svg/acreage.svg" alt="">
+                                            <span class="body-14-medium text-greyscale-900 ml-1">200m<sup
+                                                    class="body-14-medium text-greyscale-900">2</sup></span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex mt-2 align-items-center">
+                                        <div class="d-flex align-items-center">
+                                            <img src="/libary/room_detail/svg/star.svg" alt="" />
+                                            <span id="rating-text-1"
+                                                class="body-14-medium text-greyscale-900 px-1">4.5</span>
+                                            <span id="rating-text-2" class="body-14-medium text-greyscale-400">(35 đánh
+                                                giá)</span>
+                                        </div>
+                                        <div class="d-flex align-items-center ml-3">
+                                            <img src="/libary/booking_detail/svg/location.svg" alt="">
+                                            <span class="body-14-medium text-greyscale-900 ml-1">Flamingo Đại Lải
+                                                Resort</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- your option choice -->
+                    <div class="">
+                        <!-- title -->
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="heading-4 text-greyscale-900">Lựa chọn của bạn</span>
+                            <button class="body-14-bold text-semantic-1 edit-orders">Thay đổi</button>
+                        </div>
+                        <!-- selection card -->
+                        <div class="card-option mt-4">
+                            <div class="d-flex mx-3">
+                                <!-- img -->
+                                <div class="room-preview-image">
+                                    <img src="/libary//booking_detail/selection-card/showcase-room-selected.png"
+                                        class="your-choice-card-banner-image" alt="" />
+                                    <button type="" class="your-choice-card-button">
+                                        <img src="/libary/booking_detail/svg/eye-white-small.svg" alt="" />
+                                        <span class="body-10-bold text-greyscale-50 ml-2">Xem chi tiết</span>
+                                    </button>
+                                </div>
+                                <!-- info -->
+                                <div class="ml-4 w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex align-items-center">
+                                            <img src="/libary/booking_detail/svg/home.svg" alt="">
+                                            <span class="body-14-medium text-semantic-1 ml-1">Phòng loại II</span>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2px">
+                                        <span class="heading-5 text-greyscale-700">Phòng Hoa Hướng dương</span>
+                                    </div>
+                                    <div class="d-flex mt-2 gap-12px">
+                                        <div class="d-flex align-items-center">
+                                            <img src="/libary/booking_detail/svg/user-plus.svg" alt="">
+                                            <span class="body-14-medium text-greyscale-900 ml-6px">2 người
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="/libary/booking_detail/svg/user-plus.svg" alt="">
+                                            <span class="body-14-medium text-greyscale-900 ml-6px">2 trẻ em</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="/libary/booking_detail/svg/bed.svg" alt="">
+                                            <span class="body-14-medium text-greyscale-900 ml-6px">1 giường
+                                                phụ</span>
+                                        </div>
+                                        <div id="edit-button" class="d-flex align-items-center cursor-pointer">
+                                            <img src="/libary/booking_detail/svg/edit.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- price room -->
+                                <div>
+                                    <div>
+                                        <span class="heading-5 text-success">1.540.000đ</span>
+                                    </div>
+                                    <div class="d-flex justify-content-end">
+                                        <span class="body-14-regular text-greyscale-400">/đêm</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- option choose person  -->
+                            <div id="custom-option-choose-1" class="custom-option-choose">
+                                <!-- divider -->
+                                <div class="divider-1px-w-full-other2"></div>
+                                <!-- selected -->
+                                <div class="mt-16px mx-3">
+                                    <div class="d-flex flex-wrap gap-24px">
+
+                                        <div class="button-dropdown-option-adult">
+
+                                            <!-- button add adult person -->
+                                            <div id="adult-button" class="button-choose-person cursor-pointer">
+                                                <div class="d-flex align-items-center gap-6px">
+                                                    <img src="/libary/booking/svg/user-plus.svg" class="" alt="">
+                                                    <span class="body-16-medium text-greyscale-900">02 người
+                                                        lớn</span>
+
+                                                </div>
+                                                <div class="">
+                                                    <button id="" class="">
+                                                        <img src="/libary/booking/svg/circle-close.svg" class="" alt="">
+                                                    </button>
+                                                    <img src="/libary/booking/svg/chevron-right-primary.svg" class=""
+                                                        alt="">
+                                                </div>
+                                            </div>
+
+                                            <!-- option adult add  -->
+                                            <div id="adult-modal" class="option-adult">
+                                                <div class="option-adult-row">
+                                                    <div class="d-flex flex-column w-50">
+                                                        <span class="body-16-medium text-greyscale-900">Người
+                                                            lớn</span>
+                                                        <span class="body-12-medium text-greyscale-500">Từ 13 tuổi
+                                                            trở
+                                                            lên</span>
+                                                    </div>
+                                                    <div class="user-increment-decrement">
+                                                        <button id="" class="">
+                                                            <img src="/libary/booking/svg/circle-decrement.svg" id=""
+                                                                class="" alt="">
+                                                        </button>
+                                                        <span id="" class="">1</span>
+                                                        <button id="" class="">
+                                                            <img src="/libary/booking/svg/circle-increment.svg" id=""
+                                                                class="" alt="">
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="button-dropdown-option-child">
+                                            <!-- button add child person  -->
+                                            <div id="child-button" class="button-choose-person cursor-pointer">
+                                                <div class="d-flex align-items-center gap-6px">
+                                                    <img src="/libary/booking/svg/user-plus.svg" class="" alt="">
+                                                    <span class="body-16-medium text-greyscale-900">02 trẻ em</span>
+                                                </div>
+                                                <div class="">
+                                                    <button id="" class="">
+                                                        <img src="/libary/booking/svg/circle-close.svg" class="" alt="">
+                                                    </button>
+                                                    <img src="/libary/booking/svg/chevron-right-primary.svg" class=""
+                                                        alt="">
+                                                </div>
+                                            </div>
+                                            <!-- option child add  -->
+                                            <div id="child-modal" class="option-child">
+                                                <div class="option-child-row">
+                                                    <div class="d-flex flex-column w-50">
+                                                        <span class="body-16-medium text-greyscale-900">trẻ
+                                                            em</span>
+                                                        <span class="body-12-medium text-greyscale-500">Từ 6 -12
+                                                            tuổi</span>
+                                                    </div>
+                                                    <div class="user-increment-decrement">
+                                                        <button id="" class="">
+                                                            <img src="/libary/booking/svg/circle-decrement.svg" id=""
+                                                                class="" alt="">
+                                                        </button>
+                                                        <span id="" class="">1</span>
+                                                        <button id="" class="">
+                                                            <img src="/libary/booking/svg/circle-increment.svg" id=""
+                                                                class="" alt="">
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="option-child-row">
+                                                    <div class="d-flex flex-column w-50">
+                                                        <span class="body-16-medium text-greyscale-900">trẻ
+                                                            em</span>
+                                                        <span class="body-12-medium text-greyscale-500">dưới 6
+                                                            tuổi</span>
+                                                    </div>
+                                                    <div class="user-increment-decrement">
+                                                        <button id="" class="">
+                                                            <img src="/libary/booking/svg/circle-decrement.svg" id=""
+                                                                class="" alt="">
+                                                        </button>
+                                                        <span id="" class="">1</span>
+                                                        <button id="" class="">
+                                                            <img src="/libary/booking/svg/circle-increment.svg" id=""
+                                                                class="" alt="">
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="button-dropdown-option-extend-bed">
+                                            <!-- button extend bed  -->
+                                            <div id="bed-button" class="button-choose-person cursor-pointer">
+                                                <div class="d-flex align-items-center gap-6px">
+                                                    <img src="/libary/booking/svg/bed.svg" class="" alt="">
+                                                    <span class="body-16-medium text-greyscale-900">01 giường
+                                                        phụ</span>
+                                                </div>
+                                                <div class="">
+                                                    <button id="" class="">
+                                                        <img src="/libary/booking/svg/circle-close.svg" class="" alt="">
+                                                    </button>
+                                                    <img src="/libary/booking/svg/chevron-right-primary.svg" class=""
+                                                        alt="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="mt-16px">
+                                        <button id="" class="d-flex align-items-center">
+                                            <img src="/libary/booking/svg/decre.svg" alt="">
+                                            <span class="body-14-medium text-error">Bỏ giường phụ</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- price -->
+                            <div class="">
+                                <!-- divider -->
+                                <div class="divider-1px-w-full-other2"></div>
+                                <!-- detail prices -->
+                                <div class="d-flex gap-32px mt-3 align-items-center prices-detail mx-3">
+                                    <div>
+                                        <div>
+                                            <span class="body-14-medium text-greyscale-500">Giá phòng</span>
+                                        </div>
+                                        <div>
+                                            <span class="body-16-bold text-greyscale-900">4,620,000đ</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <span class="body-14-medium text-greyscale-500">Phụ thu người lớn</span>
+                                        </div>
+                                        <div>
+                                            <span class="body-16-bold text-greyscale-900">600,000đ</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <span class="body-14-medium text-greyscale-500">Phụ thu trẻ em</span>
+                                        </div>
+                                        <div>
+                                            <span class="body-16-bold text-greyscale-900">600,000đ</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <span class="body-14-medium text-greyscale-500">Phụ thu giường phụ</span>
+                                        </div>
+                                        <div>
+                                            <span class="body-16-bold text-greyscale-900">600,000đ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- selection card 2 -->
+                        <div class="card-option mt-4">
+                            <div class="d-flex mx-3">
+                                <!-- img -->
+                                <div class="room-preview-image">
+                                    <img src="/libary//booking_detail/selection-card/showcase-room-selected.png"
+                                        class="your-choice-card-banner-image" alt="" />
+                                    <button type="" class="your-choice-card-button">
+                                        <img src="/libary/booking_detail/svg/eye-white-small.svg" alt="" />
+                                        <span class="body-10-bold text-greyscale-50 ml-2">Xem chi tiết</span>
+                                    </button>
+                                </div>
+                                <!-- info -->
+                                <div class="ml-4 w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex align-items-center">
+                                            <img src="/libary/booking_detail/svg/home.svg" alt="">
+                                            <span class="body-14-medium text-semantic-1 ml-1">Phòng loại II</span>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2px">
+                                        <span class="heading-5 text-greyscale-700">Phòng Hoa Hướng dương</span>
+                                    </div>
+                                    <div class="d-flex mt-2 gap-12px">
+                                        <div class="d-flex align-items-center">
+                                            <img src="/libary/booking_detail/svg/user-plus.svg" alt="">
+                                            <span class="body-14-medium text-greyscale-900 ml-6px">2 người
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="/libary/booking_detail/svg/user-plus.svg" alt="">
+                                            <span class="body-14-medium text-greyscale-900 ml-6px">2 trẻ em</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="/libary/booking_detail/svg/bed.svg" alt="">
+                                            <span class="body-14-medium text-greyscale-900 ml-6px">1 giường
+                                                phụ</span>
+                                        </div>
+                                        <div id="edit-button" class="d-flex align-items-center cursor-pointer">
+                                            <img src="/libary/booking_detail/svg/edit.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- price room -->
+                                <div>
+                                    <div>
+                                        <span class="heading-5 text-success">1.540.000đ</span>
+                                    </div>
+                                    <div class="d-flex justify-content-end">
+                                        <span class="body-14-regular text-greyscale-400">/đêm</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- option choose person  -->
+                            <div id="custom-option-choose-2" class="custom-option-choose">
+                                <!-- divider -->
+                                <div class="divider-1px-w-full-other2"></div>
+                                <!-- selected -->
+                                <div class="mt-16px mx-3">
+                                    <div class="d-flex flex-wrap gap-24px">
+
+                                        <div class="button-dropdown-option-adult">
+
+                                            <!-- button add adult person -->
+                                            <div id="adult-button" class="button-choose-person cursor-pointer">
+                                                <div class="d-flex align-items-center gap-6px">
+                                                    <img src="/libary/booking/svg/user-plus.svg" class="" alt="">
+                                                    <span class="body-16-medium text-greyscale-900">02 người
+                                                        lớn</span>
+
+                                                </div>
+                                                <div class="">
+                                                    <button id="" class="">
+                                                        <img src="/libary/booking/svg/circle-close.svg" class="" alt="">
+                                                    </button>
+                                                    <img src="/libary/booking/svg/chevron-right-primary.svg" class=""
+                                                        alt="">
+                                                </div>
+                                            </div>
+
+                                            <!-- option adult add  -->
+                                            <div id="adult-modal" class="option-adult">
+                                                <div class="option-adult-row">
+                                                    <div class="d-flex flex-column w-50">
+                                                        <span class="body-16-medium text-greyscale-900">Người
+                                                            lớn</span>
+                                                        <span class="body-12-medium text-greyscale-500">Từ 13 tuổi
+                                                            trở
+                                                            lên</span>
+                                                    </div>
+                                                    <div class="user-increment-decrement">
+                                                        <button id="" class="">
+                                                            <img src="/libary/booking/svg/circle-decrement.svg" id=""
+                                                                class="" alt="">
+                                                        </button>
+                                                        <span id="" class="">1</span>
+                                                        <button id="" class="">
+                                                            <img src="/libary/booking/svg/circle-increment.svg" id=""
+                                                                class="" alt="">
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="button-dropdown-option-child">
+                                            <!-- button add child person  -->
+                                            <div id="child-button" class="button-choose-person cursor-pointer">
+                                                <div class="d-flex align-items-center gap-6px">
+                                                    <img src="/libary/booking/svg/user-plus.svg" class="" alt="">
+                                                    <span class="body-16-medium text-greyscale-900">02 trẻ em</span>
+                                                </div>
+                                                <div class="">
+                                                    <button id="" class="">
+                                                        <img src="/libary/booking/svg/circle-close.svg" class="" alt="">
+                                                    </button>
+                                                    <img src="/libary/booking/svg/chevron-right-primary.svg" class=""
+                                                        alt="">
+                                                </div>
+                                            </div>
+                                            <!-- option child add  -->
+                                            <div id="child-modal" class="option-child">
+                                                <div class="option-child-row">
+                                                    <div class="d-flex flex-column w-50">
+                                                        <span class="body-16-medium text-greyscale-900">trẻ
+                                                            em</span>
+                                                        <span class="body-12-medium text-greyscale-500">Từ 6 -12
+                                                            tuổi</span>
+                                                    </div>
+                                                    <div class="user-increment-decrement">
+                                                        <button id="" class="">
+                                                            <img src="/libary/booking/svg/circle-decrement.svg" id=""
+                                                                class="" alt="">
+                                                        </button>
+                                                        <span id="" class="">1</span>
+                                                        <button id="" class="">
+                                                            <img src="/libary/booking/svg/circle-increment.svg" id=""
+                                                                class="" alt="">
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="option-child-row">
+                                                    <div class="d-flex flex-column w-50">
+                                                        <span class="body-16-medium text-greyscale-900">trẻ
+                                                            em</span>
+                                                        <span class="body-12-medium text-greyscale-500">dưới 6
+                                                            tuổi</span>
+                                                    </div>
+                                                    <div class="user-increment-decrement">
+                                                        <button id="" class="">
+                                                            <img src="/libary/booking/svg/circle-decrement.svg" id=""
+                                                                class="" alt="">
+                                                        </button>
+                                                        <span id="" class="">1</span>
+                                                        <button id="" class="">
+                                                            <img src="/libary/booking/svg/circle-increment.svg" id=""
+                                                                class="" alt="">
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="button-dropdown-option-extend-bed">
+                                            <!-- button extend bed  -->
+                                            <div id="bed-button" class="button-choose-person cursor-pointer">
+                                                <div class="d-flex align-items-center gap-6px">
+                                                    <img src="/libary/booking/svg/bed.svg" class="" alt="">
+                                                    <span class="body-16-medium text-greyscale-900">01 giường
+                                                        phụ</span>
+                                                </div>
+                                                <div class="">
+                                                    <button id="" class="">
+                                                        <img src="/libary/booking/svg/circle-close.svg" class="" alt="">
+                                                    </button>
+                                                    <img src="/libary/booking/svg/chevron-right-primary.svg" class=""
+                                                        alt="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="mt-16px">
+                                        <button id="" class="d-flex align-items-center">
+                                            <img src="/libary/booking/svg/decre.svg" alt="">
+                                            <span class="body-14-medium text-error">Bỏ giường phụ</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- price -->
+                            <div class="">
+                                <!-- divider -->
+                                <div class="divider-1px-w-full-other2"></div>
+                                <!-- detail prices -->
+                                <div class="d-flex gap-32px mt-3 align-items-center prices-detail mx-3">
+                                    <div>
+                                        <div>
+                                            <span class="body-14-medium text-greyscale-500">Giá phòng</span>
+                                        </div>
+                                        <div>
+                                            <span class="body-16-bold text-greyscale-900">4,620,000đ</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <span class="body-14-medium text-greyscale-500">Phụ thu người lớn</span>
+                                        </div>
+                                        <div>
+                                            <span class="body-16-bold text-greyscale-900">600,000đ</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <span class="body-14-medium text-greyscale-500">Phụ thu trẻ em</span>
+                                        </div>
+                                        <div>
+                                            <span class="body-16-bold text-greyscale-900">600,000đ</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <span class="body-14-medium text-greyscale-500">Phụ thu giường phụ</span>
+                                        </div>
+                                        <div>
+                                            <span class="body-16-bold text-greyscale-900">600,000đ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- selection card 3 -->
+                        <div class="card-option mt-4">
+                            <div class="d-flex mx-3">
+                                <!-- img -->
+                                <div class="room-preview-image">
+                                    <img src="/libary//booking_detail/selection-card/showcase-room-selected.png"
+                                        class="your-choice-card-banner-image" alt="" />
+                                    <button type="" class="your-choice-card-button">
+                                        <img src="/libary/booking_detail/svg/eye-white-small.svg" alt="" />
+                                        <span class="body-10-bold text-greyscale-50 ml-2">Xem chi tiết</span>
+                                    </button>
+                                </div>
+                                <!-- info -->
+                                <div class="ml-4 w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex align-items-center">
+                                            <img src="/libary/booking_detail/svg/home.svg" alt="">
+                                            <span class="body-14-medium text-semantic-1 ml-1">Phòng loại II</span>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2px">
+                                        <span class="heading-5 text-greyscale-700">Phòng Hoa Hướng dương</span>
+                                    </div>
+                                    <div class="d-flex mt-2 gap-12px">
+                                        <div class="d-flex align-items-center">
+                                            <img src="/libary/booking_detail/svg/user-plus.svg" alt="">
+                                            <span class="body-14-medium text-greyscale-900 ml-6px">2 người
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="/libary/booking_detail/svg/user-plus.svg" alt="">
+                                            <span class="body-14-medium text-greyscale-900 ml-6px">2 trẻ em</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="/libary/booking_detail/svg/bed.svg" alt="">
+                                            <span class="body-14-medium text-greyscale-900 ml-6px">1 giường
+                                                phụ</span>
+                                        </div>
+                                        <div id="edit-button" class="d-flex align-items-center cursor-pointer">
+                                            <img src="/libary/booking_detail/svg/edit.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- price room -->
+                                <div>
+                                    <div>
+                                        <span class="heading-5 text-success">1.540.000đ</span>
+                                    </div>
+                                    <div class="d-flex justify-content-end">
+                                        <span class="body-14-regular text-greyscale-400">/đêm</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- option choose person  -->
+                            <div id="custom-option-choose-3" class="custom-option-choose">
+                                <!-- divider -->
+                                <div class="divider-1px-w-full-other2"></div>
+                                <!-- selected -->
+                                <div class="mt-16px mx-3">
+                                    <div class="d-flex flex-wrap gap-24px">
+
+                                        <div class="button-dropdown-option-adult">
+
+                                            <!-- button add adult person -->
+                                            <div id="adult-button" class="button-choose-person cursor-pointer">
+                                                <div class="d-flex align-items-center gap-6px">
+                                                    <img src="/libary/booking/svg/user-plus.svg" class="" alt="">
+                                                    <span class="body-16-medium text-greyscale-900">02 người
+                                                        lớn</span>
+
+                                                </div>
+                                                <div class="">
+                                                    <button id="" class="">
+                                                        <img src="/libary/booking/svg/circle-close.svg" class="" alt="">
+                                                    </button>
+                                                    <img src="/libary/booking/svg/chevron-right-primary.svg" class=""
+                                                        alt="">
+                                                </div>
+                                            </div>
+
+                                            <!-- option adult add  -->
+                                            <div id="adult-modal" class="option-adult">
+                                                <div class="option-adult-row">
+                                                    <div class="d-flex flex-column w-50">
+                                                        <span class="body-16-medium text-greyscale-900">Người
+                                                            lớn</span>
+                                                        <span class="body-12-medium text-greyscale-500">Từ 13 tuổi
+                                                            trở
+                                                            lên</span>
+                                                    </div>
+                                                    <div class="user-increment-decrement">
+                                                        <button id="" class="">
+                                                            <img src="/libary/booking/svg/circle-decrement.svg" id=""
+                                                                class="" alt="">
+                                                        </button>
+                                                        <span id="" class="">1</span>
+                                                        <button id="" class="">
+                                                            <img src="/libary/booking/svg/circle-increment.svg" id=""
+                                                                class="" alt="">
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="button-dropdown-option-child">
+                                            <!-- button add child person  -->
+                                            <div id="child-button" class="button-choose-person cursor-pointer">
+                                                <div class="d-flex align-items-center gap-6px">
+                                                    <img src="/libary/booking/svg/user-plus.svg" class="" alt="">
+                                                    <span class="body-16-medium text-greyscale-900">02 trẻ em</span>
+                                                </div>
+                                                <div class="">
+                                                    <button id="" class="">
+                                                        <img src="/libary/booking/svg/circle-close.svg" class="" alt="">
+                                                    </button>
+                                                    <img src="/libary/booking/svg/chevron-right-primary.svg" class=""
+                                                        alt="">
+                                                </div>
+                                            </div>
+                                            <!-- option child add  -->
+                                            <div id="child-modal" class="option-child">
+                                                <div class="option-child-row">
+                                                    <div class="d-flex flex-column w-50">
+                                                        <span class="body-16-medium text-greyscale-900">trẻ
+                                                            em</span>
+                                                        <span class="body-12-medium text-greyscale-500">Từ 6 -12
+                                                            tuổi</span>
+                                                    </div>
+                                                    <div class="user-increment-decrement">
+                                                        <button id="" class="">
+                                                            <img src="/libary/booking/svg/circle-decrement.svg" id=""
+                                                                class="" alt="">
+                                                        </button>
+                                                        <span id="" class="">1</span>
+                                                        <button id="" class="">
+                                                            <img src="/libary/booking/svg/circle-increment.svg" id=""
+                                                                class="" alt="">
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="option-child-row">
+                                                    <div class="d-flex flex-column w-50">
+                                                        <span class="body-16-medium text-greyscale-900">trẻ
+                                                            em</span>
+                                                        <span class="body-12-medium text-greyscale-500">dưới 6
+                                                            tuổi</span>
+                                                    </div>
+                                                    <div class="user-increment-decrement">
+                                                        <button id="" class="">
+                                                            <img src="/libary/booking/svg/circle-decrement.svg" id=""
+                                                                class="" alt="">
+                                                        </button>
+                                                        <span id="" class="">1</span>
+                                                        <button id="" class="">
+                                                            <img src="/libary/booking/svg/circle-increment.svg" id=""
+                                                                class="" alt="">
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="button-dropdown-option-extend-bed">
+                                            <!-- button extend bed  -->
+                                            <div id="bed-button" class="button-choose-person cursor-pointer">
+                                                <div class="d-flex align-items-center gap-6px">
+                                                    <img src="/libary/booking/svg/bed.svg" class="" alt="">
+                                                    <span class="body-16-medium text-greyscale-900">01 giường
+                                                        phụ</span>
+                                                </div>
+                                                <div class="">
+                                                    <button id="" class="">
+                                                        <img src="/libary/booking/svg/circle-close.svg" class="" alt="">
+                                                    </button>
+                                                    <img src="/libary/booking/svg/chevron-right-primary.svg" class=""
+                                                        alt="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="mt-16px">
+                                        <button id="" class="d-flex align-items-center">
+                                            <img src="/libary/booking/svg/decre.svg" alt="">
+                                            <span class="body-14-medium text-error">Bỏ giường phụ</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- price -->
+                            <div class="">
+                                <!-- divider -->
+                                <div class="divider-1px-w-full-other2"></div>
+                                <!-- detail prices -->
+                                <div class="d-flex gap-32px mt-3 align-items-center prices-detail mx-3">
+                                    <div>
+                                        <div>
+                                            <span class="body-14-medium text-greyscale-500">Giá phòng</span>
+                                        </div>
+                                        <div>
+                                            <span class="body-16-bold text-greyscale-900">4,620,000đ</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <span class="body-14-medium text-greyscale-500">Phụ thu người lớn</span>
+                                        </div>
+                                        <div>
+                                            <span class="body-16-bold text-greyscale-900">600,000đ</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <span class="body-14-medium text-greyscale-500">Phụ thu trẻ em</span>
+                                        </div>
+                                        <div>
+                                            <span class="body-16-bold text-greyscale-900">600,000đ</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <span class="body-14-medium text-greyscale-500">Phụ thu giường phụ</span>
+                                        </div>
+                                        <div>
+                                            <span class="body-16-bold text-greyscale-900">600,000đ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- form contact -->
+                    <div class="">
+                        <!-- tilte -->
+                        <div>
+                            <span class="heading-4 text-greyscale-900">Thông tin liên hệ</span>
+                        </div>
+                        <!-- form -->
+                        <div class="w-100 form-contact mt-24px">
+                            <div class="d-flex gap-12px">
+                                <div class="px-3 py-2 bg-greyscale-50 rounded-8px w-50">
+                                    <label for="" class="body-10-medium text-greyscale-500">Họ và tên</label>
+                                    <input type="text" class="form-contact-input" placeholder="Nguyễn Văn A" required>
+                                </div>
+                                <div class="d-flex flex-column px-3 py-2 bg-greyscale-50 rounded-8px w-50 gap-8px">
+                                    <label for="" class="body-10-medium text-greyscale-500">Ngày sinh</label>
+                                    <label for="contact-dob"
+                                        class="d-flex justify-content-between align-items-center cursor-pointer">
+                                        <input id="contact-dob" type="text" name="datefilter" class="form-contact-input"
+                                            value="" />
+                                        <img src="/libary/svg/calendar-plus.svg" alt="">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-12px mt-4">
+                                <div class="px-3 py-2 bg-greyscale-50 rounded-8px w-50">
+                                    <label for="" class="body-10-medium text-greyscale-500">Số điện thoại</label>
+                                    <input type="text" class="form-contact-input" placeholder="+84 89-372-942" required>
+                                </div>
+                                <div class="px-3 py-2 bg-greyscale-50 rounded-8px w-50">
+                                    <label for="" class="body-10-medium text-greyscale-500">Email</label>
+                                    <input type="text" class="form-contact-input" placeholder="nguyenvana@gmail.com"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <div class="px-3 py-2 bg-greyscale-50 rounded-8px ">
+                                    <label for="" class="body-10-medium text-greyscale-500">Ghi chú</label>
+                                    <textarea rows="3" class="form-contact-input note" type="text"
+                                        placeholder="Nhập ghi chú"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- other service  -->
+                    <div class="d-flex flex-column gap-24px">
+                        <!-- title -->
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center gap-4px position-relative">
+                                <span class="heading-4 text-greyscale-900 mr-4px">Trải nghiệm dịch vụ</span>
+                                <img src="/libary/booking_detail/svg/info-icon.svg" class="open-service-hover" alt="">
+                                <!-- modal hover -->
+                                <div
+                                    class="modal-hover-upper-content option_view-tooltip modal-hover-upper-content-position-ticket">
+                                    <div class="d-flex flex-column gap-4px">
+                                        <span class="body-16-medium text-greyscale-900">Mang tính chất thu thập thông
+                                            tin,</span>
+                                        <span class="body-16-medium text-greyscale-900"> không tính vào đơn hàng.</span>
+                                    </div>
+                                    <!-- triangle bottom -->
+                                    <div class="arrow-down-price-tooltip"></div>
+                                </div>
+                            </div>
+                            <button type="" class="body-14-bold text-semantic-1" onclick="openServiceList()">
+                                Xem tất cả dịch vụ
+                            </button>
+                        </div>
+                        <!-- grid services -->
+                        <div class="d-flex gap-24px">
+                            <!-- 1s item -->
+                            <div class="card-service">
+                                <div>
+                                    <img src="/libary/booking_detail/services/showcase-img-service.svg" alt="">
+                                </div>
+                                <div class="mt-3">
+                                    <span class="heading-6 text-greyscale-900">The Harbor House
+                                        Restaurant</span>
+                                </div>
+                                <div class="mt-1">
+                                    <span class="body-12-italic text-greyscale-400">Tính phí tại chỗ nghỉ</span>
+                                </div>
+                            </div>
+
+                            <!-- 2nd item  -->
+                            <div class="card-service">
+                                <div>
+                                    <img src="/libary/booking_detail/services/showcase-img-service.svg" alt="">
+                                </div>
+                                <div class="mt-3">
+                                    <span class="heading-6 text-greyscale-900">The Harbor House
+                                        Restaurant</span>
+                                </div>
+                                <div class="mt-1">
+                                    <span class="body-12-italic text-greyscale-400">Tính phí tại chỗ nghỉ</span>
+                                </div>
+                            </div>
+                            <!-- 3rd item -->
+                            <div class="card-service">
+                                <div>
+                                    <img src="/libary/booking_detail/services/showcase-img-service.svg" alt="">
+                                </div>
+                                <div class="mt-3">
+                                    <span class="heading-6 text-greyscale-900">The Harbor House
+                                        Restaurant</span>
+                                </div>
+                                <div class="mt-1">
+                                    <span class="body-12-italic text-greyscale-400">Tính phí tại chỗ nghỉ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- right ticket payment when choose -->
+                <div class="w-40">
+                    <div class="card-booking">
+
+                        <!-- price from -->
+                        <div class="d-flex align-items-baseline gap-4px">
+                            <span class="body-16-medium text-greyscale-400">Chỉ từ</span>
+                            <span class="heading-4 text-greyscale-900">1.540.000đ</span>
+                            <span class="body-16-medium text-greyscale-400">/đêm</span>
+                        </div>
+
+                        <!-- date ranger picker -->
+                        <div class="mt-16px d-flex flex-wrap justify-content-between gap-16px position-relative">
+                            <label for="time-ranger" class="date-start-ranger">
+                                <img src="/libary/booking/svg/calendar-plus.svg" class="" alt="">
+                                <span id="start-date-output" class="body-16-medium text-greyscale-900">18/11/2022</span>
+                            </label>
+                            <label for="time-ranger" class="date-end-ranger">
+                                <img src="/libary/booking/svg/calendar-close.svg" class="" alt="">
+                                <span id="end-date-output" class="body-16-medium text-greyscale-900">20/11/2022</span>
+                            </label>
+                            <!-- label for this input from date range picker -->
+                            <input id="time-ranger" type="text" name="datefilter" class="position-absolute" value=""
+                                style="bottom: 0; right: 0; visibility: hidden;" />
+                        </div>
+
+                        <!-- user member check -->
+                        <div class="mt-12px">
+                            <div class="member-person">
+                                <img src="/libary/booking/svg/user-check.svg" class="" alt="">
+                                <span class="body-16-medium text-greyscale-900">4 người lớn - 2 trẻ em</span>
+                            </div>
+                        </div>
+
+                        <!-- your choice house -->
+                        <div class="mt-24px">
+                            <!-- your choice house and person -->
+                            <span class="body-18-bold text-greyscale-900">Lựa chọn của bạn</span>
+                            <div class="mt-16px d-flex flex-wrap gap-8px">
+                                <img src="/libary/booking/booking-card/card-room-booking.png" class=""
+                                    style="width: 56px; height: 44px;" alt="">
+
+                                <div class="">
+                                    <div class="">
+                                        <span class="body-16-bold text-greyscale-500">1 x</span>
+                                        <span class="body-16-bold text-greyscale-900">Biệt thự cả căn</span>
+                                    </div>
+
+                                    <div class="d-flex flex-wrap gap-12px mt-2px">
+                                        <div class="d-flex gap-2px">
+                                            <span class="body-14-medium text-greyscale-500">Người lớn:</span>
+                                            <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                        </div>
+                                        <div class="d-flex gap-2px">
+                                            <span class="body-14-medium text-greyscale-500">trẻ em:</span>
+                                            <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                        </div>
+                                        <div class="d-flex gap-2px">
+                                            <span class="body-14-medium text-greyscale-500">Giường phụ:</span>
+                                            <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4px">
+                                        <button type="" id="" class="body-14-bold text-error">Bỏ chọn</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- price per room -->
+                        <div class="price-per-room">
+                            <!-- price -->
+                            <div class="d-flex flex-wrap">
+                                <div class="w-50 text-left">
+                                    <span class="body-14-medium text-greyscale-500">Giá phòng (1 phòng x 3 đêm)</span>
+                                </div>
+                                <div
+                                    class="w-50 d-flex align-items-center justify-content-end gap-2px position-relative">
+                                    <img src="/libary/booking/svg/info.svg" class="open-tooltip" alt="">
+                                    <span class="body-14-medium text-greyscale-700">4,620,000đ</span>
+
+                                    <!-- modal tool tip -->
+                                    <div class="price-tooltip option_view-tooltip price-tooltip-position-ticket"
+                                        style="min-width: 458px;">
+                                        <div class="current-price">
+                                            <span class="body-16-bold text-greyscale-900">
+                                                Giá gốc
+                                            </span>
+                                            <span id="" class="body-16-bold text-greyscale-900 "
+                                                style="text-decoration: line-through;">
+                                                2,540,000đ
+                                            </span>
+                                        </div>
+
+                                        <div class="price-sale-off mt-8px">
+                                            <span class="body-16-bold text-greyscale-900">Giá đã giảm</span>
+                                            <ul id="sale-off-list" class="mt-8px">
+                                                <li id="">
+                                                    <span id=""
+                                                        class="body-14-medium text-greyscale-900 text-underline">Giảm
+                                                        200k
+                                                        cho phòng từ 2 triệu đến 10
+                                                        triệu</span>
+                                                    <span id="sale-off-price"
+                                                        class="body-14-medium text-greyscale-900 ml-28px">2,240,000đ</span>
+                                                </li>
+                                                <li id="">
+                                                    <span id=""
+                                                        class="body-14-medium text-greyscale-900 text-underline">Giảm
+                                                        200k
+                                                        cho phòng từ 2 triệu đến 10
+                                                        triệu</span>
+                                                    <span id=""
+                                                        class="body-14-medium text-greyscale-900 ml-28px">2,240,000đ</span>
+                                                </li>
+                                                <li id="">
+                                                    <span id=""
+                                                        class="body-14-medium text-greyscale-900 text-underline">Giảm
+                                                        200k
+                                                        cho phòng từ 2 triệu đến 10
+                                                        triệu</span>
+                                                    <span id=""
+                                                        class="body-14-medium text-greyscale-900 ml-28px">2,240,000đ</span>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+
+                                        <div class="divider-x-other-line">
+
+                                        </div>
+
+                                        <div class="best-price mt-10px">
+                                            <span class="body-16-bold text-greyscale-900">Giá tốt nhất</span>
+                                            <span class="body-18-bold text-success">1,540,000đ</span>
+                                        </div>
+                                        <!-- triangle bottom -->
+                                        <div class="arrow-down-price-tooltip"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- extend adult -->
+                            <div class="d-flex flex-wrap mt-6px">
+                                <div class="w-50 text-left">
+                                    <span class="body-14-medium text-greyscale-500">Phụ thu người lớn</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-14-medium text-greyscale-700">600,000đ</span>
+                                </div>
+                            </div>
+
+                            <!-- extend child -->
+                            <div class="d-flex flex-wrap mt-6px">
+                                <div class="w-50 text-left">
+                                    <span class="body-14-medium text-greyscale-500">Phụ thu trẻ em</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-14-medium text-greyscale-700">600,000đ</span>
+                                </div>
+                            </div>
+
+                            <!-- extend service -->
+                            <div class="d-flex flex-wrap mt-6px">
+                                <div class="w-50 text-left">
+                                    <span class="body-14-medium text-greyscale-500">Phí dịch vụ</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-14-medium text-greyscale-700">400,000đ</span>
+                                </div>
+                            </div>
+
+                            <!-- pax fee -->
+                            <div class="d-flex flex-wrap mt-6px">
+                                <div class="w-50 text-left">
+                                    <span class="body-14-medium text-greyscale-500">Thuế</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-14-medium text-greyscale-700">622,000đ</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- your choice house 1 -->
+                        <div class="mt-24px">
+                            <!-- your choice house and person -->
+                            <div class="mt-16px d-flex flex-wrap gap-8px">
+                                <img src="/libary/booking/booking-card/card-room-booking.png" class=""
+                                    style="width: 56px; height: 44px;" alt="">
+
+                                <div class="">
+                                    <div class="">
+                                        <span class="body-16-bold text-greyscale-500">1 x</span>
+                                        <span class="body-16-bold text-greyscale-900">Biệt thự cả căn 1</span>
+                                    </div>
+
+                                    <div class="d-flex flex-wrap gap-12px mt-2px">
+                                        <div class="d-flex gap-2px">
+                                            <span class="body-14-medium text-greyscale-500">Người lớn:</span>
+                                            <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                        </div>
+                                        <div class="d-flex gap-2px">
+                                            <span class="body-14-medium text-greyscale-500">trẻ em:</span>
+                                            <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                        </div>
+                                        <div class="d-flex gap-2px">
+                                            <span class="body-14-medium text-greyscale-500">Giường phụ:</span>
+                                            <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4px">
+                                        <button type="" id="" class="body-14-bold text-error">Bỏ chọn</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- price per room 1 -->
+                        <div class="price-per-room">
+                            <!-- price -->
+                            <div class="d-flex flex-wrap">
+                                <div class="w-50 text-left">
+                                    <span class="body-14-medium text-greyscale-500">Giá phòng (1 phòng x 3 đêm)</span>
+                                </div>
+                                <div class="w-50 d-flex align-items-center justify-content-end gap-2px">
+                                    <img src="/libary/booking/svg/info.svg" class="" alt="">
+                                    <span class="body-14-medium text-greyscale-700">4,620,000đ</span>
+                                </div>
+                            </div>
+
+                            <!-- extend adult -->
+                            <div class="d-flex flex-wrap mt-6px">
+                                <div class="w-50 text-left">
+                                    <span class="body-14-medium text-greyscale-500">Phụ thu người lớn</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-14-medium text-greyscale-700">600,000đ</span>
+                                </div>
+                            </div>
+
+                            <!-- extend child -->
+                            <div class="d-flex flex-wrap mt-6px">
+                                <div class="w-50 text-left">
+                                    <span class="body-14-medium text-greyscale-500">Phụ thu trẻ em</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-14-medium text-greyscale-700">600,000đ</span>
+                                </div>
+                            </div>
+
+                            <!-- extend service -->
+                            <div class="d-flex flex-wrap mt-6px">
+                                <div class="w-50 text-left">
+                                    <span class="body-14-medium text-greyscale-500">Phí dịch vụ</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-14-medium text-greyscale-700">400,000đ</span>
+                                </div>
+                            </div>
+
+                            <!-- pax fee -->
+                            <div class="d-flex flex-wrap mt-6px">
+                                <div class="w-50 text-left">
+                                    <span class="body-14-medium text-greyscale-500">Thuế</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-14-medium text-greyscale-700">622,000đ</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- your choice house 2 -->
+                        <div class="mt-24px">
+                            <!-- your choice house and person -->
+                            <div class="mt-16px d-flex flex-wrap gap-8px">
+                                <img src="/libary/booking/booking-card/card-room-booking.png" class=""
+                                    style="width: 56px; height: 44px;" alt="">
+
+                                <div class="">
+                                    <div class="">
+                                        <span class="body-16-bold text-greyscale-500">1 x</span>
+                                        <span class="body-16-bold text-greyscale-900">Biệt thự cả căn 2</span>
+                                    </div>
+
+                                    <div class="d-flex flex-wrap gap-12px mt-2px">
+                                        <div class="d-flex gap-2px">
+                                            <span class="body-14-medium text-greyscale-500">Người lớn:</span>
+                                            <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                        </div>
+                                        <div class="d-flex gap-2px">
+                                            <span class="body-14-medium text-greyscale-500">trẻ em:</span>
+                                            <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                        </div>
+                                        <div class="d-flex gap-2px">
+                                            <span class="body-14-medium text-greyscale-500">Giường phụ:</span>
+                                            <span id="" class="body-14-medium text-greyscale-500">0</span>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4px">
+                                        <button type="" id="" class="body-14-bold text-error">Bỏ chọn</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- price per room 2 -->
+                        <div class="price-per-room">
+                            <!-- price -->
+                            <div class="d-flex flex-wrap">
+                                <div class="w-50 text-left">
+                                    <span class="body-14-medium text-greyscale-500">Giá phòng (1 phòng x 3 đêm)</span>
+                                </div>
+                                <div class="w-50 d-flex align-items-center justify-content-end gap-2px">
+                                    <img src="/libary/booking/svg/info.svg" class="" alt="">
+                                    <span class="body-14-medium text-greyscale-700">4,620,000đ</span>
+                                </div>
+                            </div>
+
+                            <!-- extend adult -->
+                            <div class="d-flex flex-wrap mt-6px">
+                                <div class="w-50 text-left">
+                                    <span class="body-14-medium text-greyscale-500">Phụ thu người lớn</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-14-medium text-greyscale-700">600,000đ</span>
+                                </div>
+                            </div>
+
+                            <!-- extend child -->
+                            <div class="d-flex flex-wrap mt-6px">
+                                <div class="w-50 text-left">
+                                    <span class="body-14-medium text-greyscale-500">Phụ thu trẻ em</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-14-medium text-greyscale-700">600,000đ</span>
+                                </div>
+                            </div>
+
+                            <!-- extend service -->
+                            <div class="d-flex flex-wrap mt-6px">
+                                <div class="w-50 text-left">
+                                    <span class="body-14-medium text-greyscale-500">Phí dịch vụ</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-14-medium text-greyscale-700">400,000đ</span>
+                                </div>
+                            </div>
+
+                            <!-- pax fee -->
+                            <div class="d-flex flex-wrap mt-6px">
+                                <div class="w-50 text-left">
+                                    <span class="body-14-medium text-greyscale-500">Thuế</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-14-medium text-greyscale-700">622,000đ</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- payment details -->
+                        <div class="mt-24px">
+                            <span class="body-18-bold text-greyscale-900">Chi tiết thanh toán</span>
+                            <!-- price per night -->
+                            <div class="d-flex flex-wrap mt-16px">
+                                <div class="w-50 text-left">
+                                    <span class="body-16-medium text-greyscale-500">Giá phòng</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-16-medium text-greyscale-700">4,620,000đ</span>
+                                </div>
+                            </div>
+
+                            <!-- extend per adult -->
+                            <div class="d-flex flex-wrap mt-16px">
+                                <div class="w-50 text-left">
+                                    <span class="body-16-medium text-greyscale-500">Phụ thu người lớn</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-16-medium text-greyscale-700">600,000đ</span>
+                                </div>
+                            </div>
+
+                            <!-- price per night -->
+                            <div class="d-flex flex-wrap mt-16px">
+                                <div class="w-50 text-left">
+                                    <span class="body-16-medium text-greyscale-500">Phụ thu trẻ em</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-16-medium text-greyscale-700">1,800,000đ</span>
+                                </div>
+                            </div>
+                            <!-- price per night -->
+                            <div class="d-flex flex-wrap mt-16px">
+                                <div class="w-50 text-left">
+                                    <span class="body-16-medium text-greyscale-500">Phụ thu giường phụ</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-16-medium text-greyscale-700">1,200,000đ</span>
+                                </div>
+                            </div>
+
+                            <!-- price service -->
+                            <div class="d-flex flex-wrap mt-12px">
+                                <div class="w-50 text-left">
+                                    <span class="body-16-medium text-greyscale-500">Phí dịch vụ</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-16-medium text-greyscale-700">400,000đ</span>
+                                </div>
+                            </div>
+
+                            <!-- fax fee -->
+                            <div class="d-flex flex-wrap mt-12px">
+                                <div class="w-50 text-left">
+                                    <span class="body-16-medium text-greyscale-500">Thuế</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-16-medium text-greyscale-700">502,000đ</span>
+                                </div>
+                            </div>
+
+                            <!-- discount price -->
+                            <div class="d-flex flex-wrap mt-12px">
+                                <div class="w-50 text-left">
+                                    <span class="body-16-medium text-greyscale-500">Giảm giá</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-16-medium text-success">-400,000đ</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-16px coupon-input">
+                                <div class="d-flex align-items-center gap-6px">
+                                    <img src="/libary/booking/svg/discount.svg" class="" alt="">
+                                    <span class="body-16-regular text-greyscale-400">Mã giảm giá</span>
+                                </div>
+
+                                <!-- discount code -->
+                                <button id="" class="body-16-medium text-semantic-1">
+                                    <span id="btn_open-list-coupon" class="discount-code" for="">GIAMGIA2010BC1</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- payment -->
+                        <div class="mt-24px">
+                            <div class="d-flex flex-wrap">
+                                <div class="w-50 text-left">
+                                    <span class="body-18-bold text-greyscale-900">Giá trị đơn hàng</span>
+                                </div>
+                                <div class="w-50 text-right">
+                                    <span class="body-18-bold text-greyscale-900">6,820,000đ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- divider -->
+                        <div class="divider-y-dash mt-4 "></div>
+                        <!-- detail-->
+                        <div class="d-flex justify-content-between mt-4">
+                            <span class="body-16-medium text-greyscale-500">Đã thanh toán</span>
+                            <span class="body-16-medium text-greyscale-700">-6,820,000đ</span>
+                        </div>
+                        <div class="d-flex justify-content-between mt-4">
+                            <span class="body-16-medium text-greyscale-500">Phí chỉnh sửa</span>
+                            <span class="body-16-medium text-greyscale-700">0đ</span>
+                        </div>
+                        <div class="d-flex justify-content-between mt-4">
+                            <span class="body-18-bold text-greyscale-900">Cần thanh toán thêm</span>
+                            <span class="body-18-bold text-greyscale-900">0đ</span>
+                        </div>
+
+                        <!-- button submit disable -->
+                        <div class="mt-16px">
+                            <button id="" class="button-gradient body-16-bold text-greyscale-50"
+                                onclick="openConfirmModal()">Cập nhật</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="footer-drop-shadow">
+            <div class="container">
+                <div class="d-flex flex-wrap justify-content-between pt-80px">
+                    <!-- logo link -->
+                    <a href="/pages" class="p-0 m-0">
+                        <img src="/libary/header_footer/Logo.png" class="" alt="logo" />
+                    </a>
+                    <!-- nav footer -->
+                    <div class="d-flex flex-wrap gap-40px">
+                        <div class="d-flex flex-column gap-32px">
+                            <a href="/#" class="body-18-bold text-greyscale-500 py-8px">
+                                Tin tức sự kiện
+                            </a>
+                        </div>
+                        <div class="d-flex flex-column gap-32px">
+                        </div>
+                    </div>
+
+                    <div class="d-flex">
+                        <img src="/libary/header_footer/right-footer-logo.svg" class="footer-logo-right" alt="">
+                        <div class="d-flex flex-column ml-32px">
+                            <span class="body-12-medium text-greyscale-700">Tải app tại</span>
+                            <a href="/#" class="mt-14px">
+                                <img src="/libary/header_footer/svg/App-Store.svg" class="" alt="download" />
+                            </a>
+                            <a href="/#" class="mt-14px">
+                                <img src="/libary/header_footer/svg/Google-Play.svg" class="" alt="download" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-copyright">
+                    <span class="body-14-medium text-greyscale-900">Copyright © 2022 On the Go. All rights
+                        reserved</span>
+                    <span class="body-14-medium text-greyscale-900">Power by Flamingo Resorts</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- .modal-->
+    <!-- modal list coupon  -->
+    <div class="coupon-modal" id="coupon-modal" name="coupon-modal">
+        <div class="coupon-modal-content custom_scroll">
+
+            <!-- title modal ticket -->
+            <div class="ticket-title">
+                <span class="heading-5 text-greyscale-900">Chọn ưu đãi</span>
+            </div>
+
+            <!-- input ticket code and button -->
+            <div class="ticket-text-field">
+                <input id="ticket-code" type="text" class="ticket-input body-16-medium text-grey-900" name="ticket-code"
+                    placeholder="Nhập mã ưu đãi">
+                <button id="" class="ticket-button body-18-bold text-greyscale-50" name="ticket-submit">Áp dụng</button>
+            </div>
+
+            <!-- divider dasher -->
+            <div class="ticket-divider">
+                <div class="ticket-divider-dasher"></div>
+            </div>
+
+            <!-- list ticket and radio button -->
+            <div class="list-ticket">
+
+                <!-- list ticket avable -->
+                <div class="list-ticket-row">
+                    <div style="width: 18px;">
+                        <input type="radio" name="radio" id="" checked />
+                    </div>
+                    <div class="ticket-avaible">
+                        <div class="d-flex justify-content-between">
+                            <div class="w-70">
+                                <span class="body-16-medium text-main-secondary">Giảm 200k cho phòng từ 2 triệu đến 10
+                                    triệu
+                                </span>
+                            </div>
+                            <button id="" class="body-14-medium text-semantic-1" name="btn_open-coupon-detail">Chi
+                                tiết</button>
+                        </div>
+
+                        <div class="d-flex gap-4px mt-2px">
+                            <span class="body-12-medium text-grey-500">Thời gian đặt: </span>
+                            <span class="body-12-medium text-grey-900">09:00 30/11/2022 - 23:59 30/12/2022 </span>
+                        </div>
+
+                        <div class="d-flex gap-4px mt-2px mb-2">
+                            <span class="body-12-medium text-grey-500">Thời gian lưu trú:</span>
+                            <span class="body-12-medium text-grey-900"> 09:00 30/11/2022 - 23:59 30/12/2022 </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-ticket-row">
+                    <div style="width: 18px;">
+                        <input type="radio" name="radio" id="" />
+                    </div>
+                    <div class="ticket-avaible">
+                        <div class="d-flex justify-content-between">
+                            <div class="w-70">
+                                <span class="body-16-medium text-main-secondary">Giảm 200k cho phòng từ 2 triệu đến 10
+                                    triệu
+                                </span>
+                            </div>
+                            <button id="" class="body-14-medium text-semantic-1" name="btn_open-coupon-detail">Chi
+                                tiết</button>
+                        </div>
+
+                        <div class="d-flex gap-4px mt-2px">
+                            <span class="body-12-medium text-grey-500">Thời gian đặt: </span>
+                            <span class="body-12-medium text-grey-900">09:00 30/11/2022 - 23:59 30/12/2022 </span>
+                        </div>
+
+                        <div class="d-flex gap-4px mt-2px mb-2">
+                            <span class="body-12-medium text-grey-500">Thời gian lưu trú:</span>
+                            <span class="body-12-medium text-grey-900"> 09:00 30/11/2022 - 23:59 30/12/2022 </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- list ticket disable -->
+                <div class="list-ticket-row">
+                    <div style="width: 18px;">
+                        <input type="radio" name="radio" id="" disabled />
+                    </div>
+                    <div class="ticket-disable">
+                        <div class="d-flex justify-content-between">
+                            <div class="w-70">
+                                <span class="body-16-medium text-greyscale-500">Giảm 200k cho phòng từ 2 triệu đến 10
+                                    triệu
+                                </span>
+                            </div>
+                            <button id="" class="body-14-medium text-greyscale-500" name="btn_open-coupon-detail"
+                                disabled>Chi tiết</button>
+                        </div>
+
+                        <div class="d-flex gap-4px mt-2px">
+                            <span class="body-12-medium text-grey-500">Thời gian đặt: </span>
+                            <span class="body-12-medium text-grey-900">09:00 30/11/2022 - 23:59 30/12/2022 </span>
+                        </div>
+
+                        <div class="d-flex gap-4px mt-2px mb-2">
+                            <span class="body-12-medium text-grey-500">Thời gian lưu trú:</span>
+                            <span class="body-12-medium text-grey-900"> 09:00 30/11/2022 - 23:59 30/12/2022 </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-ticket-row">
+                    <div style="width: 18px;">
+                        <input type="radio" name="radio" id="" disabled />
+                    </div>
+                    <div class="ticket-disable">
+                        <div class="d-flex justify-content-between">
+                            <div class="w-70">
+                                <span class="body-16-medium text-greyscale-500">Giảm 200k cho phòng từ 2 triệu đến 10
+                                    triệu
+                                </span>
+                            </div>
+                            <button id="" class="body-14-medium text-greyscale-500" name="btn_open-coupon-detail"
+                                disabled>Chi tiết</button>
+                        </div>
+
+                        <div class="d-flex gap-4px mt-2px">
+                            <span class="body-12-medium text-grey-500">Thời gian đặt: </span>
+                            <span class="body-12-medium text-grey-900">09:00 30/11/2022 - 23:59 30/12/2022 </span>
+                        </div>
+
+                        <div class="d-flex gap-4px mt-2px mb-2">
+                            <span class="body-12-medium text-grey-500">Thời gian lưu trú:</span>
+                            <span class="body-12-medium text-grey-900"> 09:00 30/11/2022 - 23:59 30/12/2022 </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- button submit -->
+            <div class="p-4">
+                <button id="btn_close-modal-coupon-list" class="button-submit-full-width" name="">
+                    <span class="body-16-bold text-white">Đóng</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- modal coupon detail 1-->
+    <div class="coupon-detail-modal" id="coupon-detail-modal-1" name="coupon-detail-modal">
+        <div class="coupon-modal-content-detail custom_scroll">
+            <div class="coupon-modal-detail-title">
+                <span class="heading-6 text-white">Chi tiết</span>
+            </div>
+
+            <!-- ticket modal ticket code -->
+            <div class="coupon-modal-code-spacing">
+                <div class="coupon-modal-code ">
+                    <div class="mt-2">
+                        <span class="heading-5 text-main-secondary">Giảm 200k cho phòng từ 2 triệu</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="body-16-bold text-greyscale-700">GIAMGIA2010BC1</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ticket-description">
+                <!-- ticket modal description -->
+                <div class="d-flex flex-column gap-8px mt-24px">
+                    <span class="body-18-bold text-greyscale-900">Mô tả</span>
+                    <span class="body-16-medium text-greyscale-500">Khách sẽ lưu trú tại Villa 1 phòng ngủ tại khu
+                        Hilltop
+                        Villa hoặc Forest Villa. Diện tích Villa 1 phòng ngủ Flamingo Đại Lại từ 72 – 140m2, với thiết
+                        kế hoà quyện cùng thiên nhiên, nội thất cao cấp, phòng tắm với bồn tắm nằm.</span>
+                </div>
+
+                <!-- ticket time apply  -->
+                <div class="d-flex flex-column gap-8px mt-24px">
+                    <span class="body-18-bold text-greyscale-900">Thời gian áp dụng</span>
+                    <ul class="mt-8">
+                        <li class="body-16-medium text-greyscale-500">Thời gian đặt: 09:00 03/10/2022 - 23:59 30/11/2022
+                        </li>
+                        <li class="body-16-medium text-greyscale-500">Thời gian lưu trú: 01/12/2022 – 31/05/2023 (loại
+                            trừ giai đoạn lễ tết)</li>
+                    </ul>
+                </div>
+
+                <!-- ticket Conditions apply -->
+                <div class="d-flex flex-column gap-8px mt-24px">
+                    <span class="body-18-bold text-greyscale-900">Điều kiện áp dụng</span>
+                    <ul class="mt-8">
+                        <li class="body-16-medium text-greyscale-500">Số lượng mã không giới hạn</li>
+                        <li class="body-16-medium text-greyscale-500">Khống giới hạn số lần sử dụng trên mỗi khách</li>
+                    </ul>
+                </div>
+
+                <!-- button apply or back -->
+                <div class="d-flex flex-row gap-16px mt-32px mb-24px">
+                    <button id="btn_back-to-coupon-list"
+                        class="button-50-bg-white-rounder-8 body-16-bold text-main-secondary" name="">Trở
+                        về</button>
+                    <button id="btn_apply-coupon" class="button-50-bg-main-rounder-8 body-16-bold text-white" name="">Áp
+                        dụng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal coupon detail 2-->
+    <div class="coupon-detail-modal" id="coupon-detail-modal-2" name="coupon-detail-modal">
+        <div class="coupon-modal-content-detail custom_scroll">
+            <div class="coupon-modal-detail-title">
+                <span class="heading-6 text-white">Chi tiết</span>
+            </div>
+
+            <!-- ticket modal ticket code -->
+            <div class="coupon-modal-code-spacing">
+                <div class="coupon-modal-code ">
+                    <div class="mt-2">
+                        <span class="heading-5 text-main-secondary">Giảm 500k cho phòng từ 2 triệu</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="body-16-bold text-greyscale-700">GIAMGIA2010BC1</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ticket-description">
+                <!-- ticket modal description -->
+                <div class="d-flex flex-column gap-8px mt-24px">
+                    <span class="body-18-bold text-greyscale-900">Mô tả</span>
+                    <span class="body-16-medium text-greyscale-500">Khách sẽ lưu trú tại Villa 1 phòng ngủ tại khu
+                        Hilltop
+                        Villa hoặc Forest Villa. Diện tích Villa 1 phòng ngủ Flamingo Đại Lại từ 72 – 140m2, với thiết
+                        kế hoà quyện cùng thiên nhiên, nội thất cao cấp, phòng tắm với bồn tắm nằm.</span>
+                </div>
+
+                <!-- ticket time apply  -->
+                <div class="d-flex flex-column gap-8px mt-24px">
+                    <span class="body-18-bold text-greyscale-900">Thời gian áp dụng</span>
+                    <ul class="mt-8">
+                        <li class="body-16-medium text-greyscale-500">Thời gian đặt: 09:00 03/10/2022 - 23:59 30/11/2022
+                        </li>
+                        <li class="body-16-medium text-greyscale-500">Thời gian lưu trú: 01/12/2022 – 31/05/2023 (loại
+                            trừ giai đoạn lễ tết)</li>
+                    </ul>
+                </div>
+
+                <!-- ticket Conditions apply -->
+                <div class="d-flex flex-column gap-8px mt-24px">
+                    <span class="body-18-bold text-greyscale-900">Điều kiện áp dụng</span>
+                    <ul class="mt-8">
+                        <li class="body-16-medium text-greyscale-500">Số lượng mã không giới hạn</li>
+                        <li class="body-16-medium text-greyscale-500">Khống giới hạn số lần sử dụng trên mỗi khách</li>
+                    </ul>
+                </div>
+
+                <!-- button apply or back -->
+                <div class="d-flex flex-row gap-16px mt-32px mb-24px">
+                    <button id="btn_back-to-coupon-list"
+                        class="button-50-bg-white-rounder-8 body-16-bold text-main-secondary" name="">Trở
+                        về</button>
+                    <button id="btn_apply-coupon" class="button-50-bg-main-rounder-8 body-16-bold text-white" name="">Áp
+                        dụng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal confirm editor -->
+    <div id="modal-confirm-edit" class="modal-confirm-edit" name="modal-confirm-edit" style="">
+        <div class="modal-confirm-edit-content" style="margin-top: 15%;">
+            <div class="px-55px text-center">
+                <span class="heading-5 text-greyscale-900">Bạn chắc chắn muốn chỉnh sửa
+                    đơn đặt phòng?</span>
+            </div>
+            <div class="d-flex justify-content-center align-items-center gap-24px mt-4 px-40px" style="z-index: 2;">
+                <button onclick="closeConfirmModal()"
+                    class="button-50-bg-white-rounder-8 body-16-bold text-main-secondary">Hủy</button>
+                <button onclick="redirectEdit()" class="button-50-bg-main-rounder-8 body-16-bold text-white">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- add script JS -->
+
+    <script src="/js/header-footer.js"></script>
+    <script src="/js/booking/booking-details.js"></script>
+    <script>
+        function redirectEdit() {
+            location.href = "/pages/booking/after-edit/waiting-payment.html";
+        }
+
+    </script>
+    <!-- date range picker script -->
+    <script src="/js/date-range-picker.js"></script>
+
+
+
+</body>
+
+</html>

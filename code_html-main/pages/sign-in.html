@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- page title change in here -->
+    <title>On the go - Sign in</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/signin-signup.css" rel="stylesheet">
+
+    <!-- this page using splide slider, to use this using terminal and text:" npm install @splidejs/splide "-->
+    <!-- plugin css -->
+    <link href="/node_modules/@splidejs/splide/dist/css/splide.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="signin-signup-wrapper">
+            <!-- left slide show in sing in sign up -->
+            <div class="custom-slide-lef-show">
+                <div class="logo-signin">
+                    <!-- logo link -->
+                    <a href="/" class="p-0 m-0">
+                        <img src="/libary/signin/svg/logo.svg" class="" alt="logo" />
+                    </a>
+                </div>
+                <!-- main slide container show -->
+                <!-- images slide show -->
+                <div id="SigninSignUpSplide" class="splide splide-custom" aria-label="Signin-SignUp-splide">
+                    <div class="splide__track">
+                        <div class="splide__list">
+                            <li class="splide__slide">
+                                <img src="/libary/signin/anh-1.png">
+                                <div class="d-flex flex-column mt-32px w-80">
+                                    <span class="heading-4 text-greyscale-900">Thuê phòng nhanh chóng</span>
+                                    <span class="body-16-regualar text-greyscale-500 mt-16px">Trải nghiệm trải nghiệm
+                                        chuyên
+                                        du
+                                        lịch tuyệt vời từ việc đặt phòng khách sạn.</span>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <img src="/libary/signin/anh-2.png">
+                                <div class="d-flex flex-column mt-32px w-80">
+                                    <span class="heading-4 text-greyscale-900">Phòng chuẩn quốc tế</span>
+                                    <span class="body-16-regualar text-greyscale-500 mt-16px">Khám phá hàng trăm căn
+                                        phòng đẹp với dịch vụ tuyệt vời</span>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <img src="/libary/signin/anh-3.png">
+                                <div class="d-flex flex-column mt-32px w-80">
+                                    <span class="heading-4 text-greyscale-900">Tiện ích đẳng cấp</span>
+                                    <span class="body-16-regualar text-greyscale-500 mt-16px">Sử dụng vô vàn tiện ích
+                                        nội khu tuyệt vời từ chuỗi khách sạn top đầu Việt Nam</span>
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- main content sign in sign up -->
+            <div class="right-side-content">
+                <div class="right-side-container">
+                    <!-- signin header -->
+                    <div class=" d-flex flex-column gap-8px">
+                        <span class="heading-4 text-greyscale-900">Đăng nhập</span>
+                        <span class="body-16-regular text-greyscale-500">Chào mừng bạn đến ON THE GO. Đăng nhập để bắt
+                            đầu tìm kiếm điểm đến của bạn!</span>
+                    </div>
+                    <div class="mt-32px">
+
+                        <form action="" method="" id="signin_form" name="signin_form" for=""
+                            class="d-flex flex-column gap-24px">
+
+                            <!-- empty account | default none -->
+                            <div class="empty-account-validate" style="display: none;">
+                                <img src="/libary/signin/svg/error-info.svg" alt="">
+                                <span id="" name="" class="body-14-medium text-error">Tài khoản không tồn tại hoặc sai
+                                    mật
+                                    khẩu. Bạn vui lòng thử lại.</span>
+                            </div>
+                            <div class="d-flex flex-column gap-6px">
+                                <label class="body-14-medium text-greyscale-700">Email/ Số điện thoại</label>
+                                <input type="text" name="signin_email" id="signin_email"
+                                    class="input-100-grey-50-radius-8 body-16-medium" placeholder="Nhập email hoặc số điện thoại">
+                                <span id="error_email" class="body-12-medium text-error" style="display: none;">Vui lòng
+                                    nhập Email hoặc Số
+                                    điện thoại của bạn.</span>
+                            </div>
+
+
+                            <div class="d-flex flex-column gap-6px">
+                                <label class="body-14-medium text-greyscale-700">Mật khẩu</label>
+                                <div class="d-flex align-items-center">
+                                    <input id="signin_password" type="password" name="signin_password"
+                                        class="input-100-grey-50-radius-8 body-16-medium" style="padding-right: 56px;"
+                                        placeholder="Nhập mật khẩu">
+                                    <div id="" name="" for="" class="show-password" onclick="showPassword()">
+                                        <img id="password_image" src="/libary/signin/svg/EyeClosed.svg" alt="">
+                                    </div>
+                                </div>
+                                <span id="error_password" class="body-12-medium text-error" style="display: none;">Vui
+                                    lòng nhập mật khẩu
+                                    của bạn.</span>
+                            </div>
+
+                            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                                <div class="d-flex">
+                                    <!-- custom checkbox -->
+                                    <!-- id label for input check -->
+                                    <div style="width: 36px; position: relative; scale: 0.6; cursor: pointer;">
+                                        <div class="group-checkbox">
+                                            <input type="checkbox" name="password-remember" id="password-remember" />
+                                            <label for="password-remember"></label>
+                                        </div>
+                                    </div>
+                                    <div class="" style="margin-left: -8px;">
+                                        <label for="password-remember" class="cursor-pointer body-12-medium text-greyscale-500">Nhớ mật khẩu</label>
+                                    </div>
+                                </div>
+                                <a href="/pages/forgot-password/index.html" id="" name=""
+                                    class="body-12-medium text-semantic-1">Quên mật
+                                    khẩu?</a>
+                            </div>
+
+                            <button id="signin_submit" name="" type="submit"
+                                class="button-100-main-liner-rounder-8 body-16-bold text-white">Đăng nhập</button>
+                        </form>
+
+                        <div class="divider-continue-with">
+                            <div class="divider-text body-10-regular text-greyscale-500">
+                                <span>Hoặc tiếp tục với</span>
+                            </div>
+                            <div class="divider-continue">
+                            </div>
+                        </div>
+
+                        <!-- social login -->
+                        <div class="d-flex justify-content-center gap-24px mt-24px">
+                            <a href="" id="" name="" class="social-signin">
+                                <img src="/libary/signin/svg/Google.svg" class="" alt="">
+                            </a>
+                            <a href="" id="" name="" class="social-signin">
+                                <img src="/libary/signin/svg/facebook.svg" class="" alt="">
+                            </a>
+                        </div>
+
+                        <!-- register -->
+                        <div class="d-flex justify-content-center gap-6px mt-40px">
+                            <span class="body-14-medium text-greyscale-700">Bạn chưa có tài khoản?</span>
+                            <a href="/pages/signup/index.html" id="" class="body-14-bold text-main-secondary">Đăng ký ngay</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Plugins script JS -->
+    <script src="/node_modules/@splidejs/splide/dist/js/splide.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/left-slide-show.js"></script>
+    <script src="/js/sign-in.js"></script>
+</body>
+
+</html>

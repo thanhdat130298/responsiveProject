@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/custom-booking-detail/custom-booking-detail.css" rel="stylesheet">
+
+    <!-- datepicker style -->
+    <link href="/css/date-range-picker.css" rel="stylesheet">
+    <!-- date range picker -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+</head>
+
+<body>
+
+    <style>
+        .start-date {
+            border-radius: 12px !important;
+        }
+
+        .drp-buttons {
+            display: none !important;
+        }
+    </style>
+
+    <div class="">
+        <!-- tilte -->
+        <div>
+            <span class="heading-4 text-greyscale-900">Thông tin liên hệ</span>
+        </div>
+        <!-- form -->
+        <div class="w-100 form-contact mt-24px">
+            <div class="d-flex gap-12px">
+                <div class="px-3 py-2 bg-greyscale-50 rounded-8px w-50">
+                    <label for="" class="body-10-medium text-greyscale-500">Họ và tên</label>
+                    <input type="text" class="form-contact-input" placeholder="Nguyễn Văn A" required>
+                </div>
+                <div class="d-flex flex-column px-3 py-2 bg-greyscale-50 rounded-8px w-50 gap-8px">
+                    <label for="" class="body-10-medium text-greyscale-500">Ngày sinh</label>
+                    <label for="contact-dob" class="d-flex justify-content-between align-items-center cursor-pointer">
+                        <input id="contact-dob" type="text" name="datefilter" class="form-contact-input" value="" />
+                        <img src="/libary/svg/calendar-plus.svg" alt="">
+                    </label>
+                </div>
+            </div>
+            <div class="d-flex gap-12px mt-4">
+                <div class="px-3 py-2 bg-greyscale-50 rounded-8px w-50">
+                    <label for="" class="body-10-medium text-greyscale-500">Số điện thoại</label>
+                    <input type="text" class="form-contact-input" placeholder="+84 89-372-942" required>
+                </div>
+                <div class="px-3 py-2 bg-greyscale-50 rounded-8px w-50">
+                    <label for="" class="body-10-medium text-greyscale-500">Email</label>
+                    <input type="text" class="form-contact-input" placeholder="nguyenvana@gmail.com" required>
+                </div>
+            </div>
+            <div class="mt-4">
+                <div class="px-3 py-2 bg-greyscale-50 rounded-8px ">
+                    <label for="" class="body-10-medium text-greyscale-500">Ghi chú</label>
+                    <textarea rows="3" class="form-contact-input note" type="text"
+                        placeholder="Nhập ghi chú"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Plugins script JS -->
+    <script src="/node_modules/@splidejs/splide/dist/js/splide.js"></script>
+    <script src="/js/date-range-picker.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+.card-comment-home {
+    min-width: 868px;
+    padding: 40px;
+    gap: 64px;
+    background-color: var(--grayscale-50);
+    border-radius: 32px;
+}
+
+/* splide  */
+
+.splide__list {
+    gap: 48px;
+}
+
+#newSplide>.splide__track>.splide__list>.splide__slide {
+    display: flex;
+}
+
+/* splide dot */
+.splide__pagination {
+    bottom: -60px;
+    gap: 16px;
+}
+
+.splide__pagination__page {
+    opacity: 1;
+}
+
+.splide__pagination li .splide__pagination__page {
+    width: 16px;
+    height: 16px;
+    transition: all 300ms ease-in-out;
+    background: var(--secondary-100)
+}
+
+.splide__pagination li .splide__pagination__page.is-active {
+    scale: 1;
+    background: var(--main-secondary);
+    transform: scale(1);
+}

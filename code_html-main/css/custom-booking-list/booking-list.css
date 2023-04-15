@@ -1,0 +1,131 @@
+.list-card-booking {
+    padding: 24px;
+    background: var(--other-white);
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+}
+
+.payment-time {
+    display: none;
+}
+
+.waiting-payment span {
+    color: var(--system-warning);
+}
+
+.completed-payment {
+    border-radius: 8px;
+    background-color: #E6FAF0;
+}
+
+.completed-payment span {
+    color: var(--system-success);
+}
+
+.cancel-payment {
+    border-radius: 8px;
+    background-color: #FFEDED;
+}
+
+.cancel-payment span {
+    color: var(--system-error);
+}
+
+.booking-list_modal-filter-content {
+    position: absolute;
+    flex-direction: column;
+    margin-top: 12px;
+    padding: 16px 12px;
+    width: 286px;
+    right: 0;
+    background: var(--other-white);
+    box-shadow: 0px 10px 10px rgba(16, 10, 85, 0.1);
+    z-index: 2;
+}
+
+.booking-list_modal-filter-content ul li {
+    list-style-type: none;
+    padding: 8px 35px 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.booking-list_modal-filter-content ul {
+    padding: 0;
+    background-color: var(--other-white);
+}
+
+.booking-list_modal-filter-content ul li:hover {
+    background-color: var(--grayscale-50);
+}
+
+.index-1 {
+    z-index: 1;
+}
+
+.input-search-room {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+    padding: 12px;
+    gap: 6px;
+    background: var(--other-base);
+    border: 1px solid var(--other-line);
+    border-radius: 8px;
+
+}
+
+.input-search-room input {
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    padding: 0px;
+}
+
+.input-search-room input:focus {
+    border: none;
+}
+
+input.filter-input {
+    background: transparent !important;
+}
+
+.select-location {
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+
+    display: block;
+    width: 100%;
+
+    border: none;
+
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.select-location:focus-visible {
+    outline: none;
+}
+
+.select-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 6px;
+    padding: 12px;
+
+    background: var(--other-base);
+    border: 1px solid var(--other-line);
+    border-radius: 8px;
+}
+
+.list-view {
+    visibility: hidden;
+}

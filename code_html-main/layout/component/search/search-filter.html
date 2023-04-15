@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/custom-booking-list/booking-list.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- container -->
+    <div class="container">
+        <!-- card search info -->
+        <div style="width: 260px;">
+            <!-- info -->
+            <div class="mt-4 py-4 px-3 bg-white border-line-white rounded-16px">
+                <div>
+                    <span class="body-18-bold text-greyscale-900">Tìm kiếm</span>
+                </div>
+                <div class="mt-3">
+                    <label for="" class="body-14-bold text-greyscale-900">Phòng nghỉ dưỡng</label>
+                    <div class="input-search-room">
+                        <img src="/libary/booking/svg/main-hotel.svg" alt="">
+                        <input type="text" placeholder="Nhập tên phòng">
+                    </div>
+                </div>
+                <div class="mt-10px">
+                    <label for="" class="body-14-bold text-greyscale-900">Điểm đến</label>
+                    <div class="select-option">
+                        <img src="/libary/booking/svg/main-home-3.svg" alt="">
+                        <select class="select-location ml-6px" id="">
+                            <option>Flamingo Đại Lải</option>
+                        </select>
+                        <img src="/libary/booking/svg/main-arrow-chevron-right.svg" alt="">
+                    </div>
+                </div>
+                <div>
+                    <label for="" class="body-14-bold text-greyscale-900">Thời gian</label>
+                    <div class="select-option">
+                        <img src="/libary/booking/svg/main-calendar-plus.svg" alt="">
+                        <span class="body-16-medium text-greyscale-900 ml-6px">20 - 23/6</span>
+                        <img src="/libary/booking/svg/main-arrow-chevron-right.svg" alt="">
+                    </div>
+                </div>
+                <div>
+                    <label for="" class="body-14-bold text-greyscale-900">Phòng nghỉ dưỡng</label>
+                    <div class="select-option">
+                        <img src="/libary/booking_detail/svg/user-plus.svg" alt="">
+                        <span class="body-16-medium text-greyscale-900 ">2 khách - 3 phòng</span>
+                        <img src="/libary/booking/svg/main-arrow-chevron-right.svg" alt="">
+                    </div>
+                </div>
+                <button class="body-16-bold text-white button-100-main-liner-rounder-8 mt-3">Tìm kiếm</button>
+            </div>
+            <!-- filter -->
+            <div class="mt-4 py-4 bg-white border-line-white rounded-16px">
+                <div class="d-flex align-items-center px-3">
+                    <img src="/libary/booking/svg/menu-unfold.svg" alt="">
+                    <span class="heading-6 text-greyscale-900 ml-2">Bộ lọc</span>
+                </div>
+
+                <div class="divider-x my-3"></div>
+
+                <div class="d-flex justify-content-between align-items-center px-3">
+                    <span class="body-16-bold text-greyscale-900">Lọc theo</span>
+                    <button class="body-14-medium text-semantic-1">Xóa</button>
+                </div>
+                <!-- price filter -->
+                <div class="mt-4 px-3">
+                    <span class="body-14-bold text-greyscale-900">Khoảng giá</span>
+                </div>
+                <div class="d-flex flex-column gap-12px mt-3 px-3">
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">0 - 1,000,000đ</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">1,000,000đ - 2,000,000đ</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">2,000,000đ - 3,000,000đ</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">3,000,000đ - 4,000,000đ</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">4,000,000đ +</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider-x my-4"></div>
+
+                <!-- Type of resort  -->
+                <div class="mt-4 px-3">
+                    <span class="body-14-bold text-greyscale-900">Loại hình nghỉ dưỡng</span>
+                </div>
+                <div class="d-flex flex-column gap-12px mt-3 px-3">
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">Khách sạn</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">Biệt thự</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">Căn hộ</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider-x my-4"></div>
+
+                <!-- Amenities -->
+                <div class="mt-4 px-3">
+                    <span class="body-14-bold text-greyscale-900">Tiện ích đi kèm</span>
+                </div>
+                <div class="d-flex flex-column gap-12px mt-3 px-3">
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">TV</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">Máy lạnh</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">Máy giặt</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">Ban công</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">Hồ bơi</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">Hệ thống sưởi</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">Cho phép mang vật nuôi</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">Máy giặt</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- button show more amenities -->
+                <div class="mt-3">
+                    <button id="" class="body-12-bold text-semantic-1">Xem thêm</button>
+                </div>
+
+                <div class="divider-x my-4"></div>
+
+                <!-- services -->
+                <div class="mt-4 px-3">
+                    <span class="body-14-bold text-greyscale-900">Dịch vụ đi kèm</span>
+                </div>
+                <div class="d-flex flex-column gap-12px mt-3 px-3">
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">Bữa sáng</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">Dịch vụ dọn phòng</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">Nấu ăn trực tiếp</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">Giặt là</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">Spa</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <!-- option -->
+                        <div class="d-flex">
+                            <div style="width: 36px; position: relative; scale: 0.8;">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <span class="body-12-medium text-greyscale-900">Phòng khách sạn</span>
+                            </div>
+                        </div>
+                        <!-- number -->
+                        <div>
+                            <span class="body-12-medium text-greyscale-900">90</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- button show more services -->
+                <div class="mt-3">
+                    <button id="" class="body-12-bold text-semantic-1">Xem thêm</button>
+                </div>
+                
+            </div>
+        </div>
+</body>
+
+</html>

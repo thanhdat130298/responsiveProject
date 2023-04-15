@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- page title change in here -->
+    <title>On the go - Sign Up OTP</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/signin-signup.css" rel="stylesheet">
+
+    <!-- this page using splide slider, to use this using terminal and text:" npm install @splidejs/splide "-->
+    <!-- plugin css -->
+    <link href="/node_modules/@splidejs/splide/dist/css/splide.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="signin-signup-wrapper">
+            <!-- left slide show in sing in sign up -->
+            <div class="custom-slide-lef-show">
+                <div class="logo-signin">
+                    <!-- logo link -->
+                    <a href="/" class="p-0 m-0">
+                        <img src="/libary/signin/svg/logo.svg" class="" alt="logo" />
+                    </a>
+                </div>
+                <!-- main slide container show -->
+                <!-- images slide show -->
+                <div id="SigninSignUpSplide" class="splide splide-custom" aria-label="Signin-SignUp-splide">
+                    <div class="splide__track">
+                        <div class="splide__list">
+                            <li class="splide__slide">
+                                <img src="/libary/signin/anh-1.png">
+                                <div class="d-flex flex-column mt-32px w-80">
+                                    <span class="heading-4 text-greyscale-900">Thuê phòng nhanh chóng</span>
+                                    <span class="body-16-regualar text-greyscale-500 mt-16px">Trải nghiệm trải nghiệm
+                                        chuyên
+                                        du
+                                        lịch tuyệt vời từ việc đặt phòng khách sạn.</span>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <img src="/libary/signin/anh-2.png">
+                                <div class="d-flex flex-column mt-32px w-80">
+                                    <span class="heading-4 text-greyscale-900">Phòng chuẩn quốc tế</span>
+                                    <span class="body-16-regualar text-greyscale-500 mt-16px">Khám phá hàng trăm căn
+                                        phòng đẹp với dịch vụ tuyệt vời</span>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <img src="/libary/signin/anh-3.png">
+                                <div class="d-flex flex-column mt-32px w-80">
+                                    <span class="heading-4 text-greyscale-900">Tiện ích đẳng cấp</span>
+                                    <span class="body-16-regualar text-greyscale-500 mt-16px">Sử dụng vô vàn tiện ích
+                                        nội khu tuyệt vời từ chuỗi khách sạn top đầu Việt Nam</span>
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- main content sign in sign up -->
+            <div class="right-side-content">
+                <div class="right-side-container">
+
+                    <!-- step signup -->
+
+                    <div class="d-flex align-items-center gap-8px w-100">
+                        <div class="step-signup">
+                            <!-- step number -->
+                            <div class="number-step-done body-12-medium text-white"><img
+                                    src="/libary/signin/svg/check-done.svg" alt=""></div>
+                            <span class="body-14-medium text-greyscale-900">Đăng ký</span>
+                        </div>
+                        <div class="chevon-signup">
+                            <img src="/libary/signin/svg/chevron-right-900.svg" alt="">
+                        </div>
+                        <div class="step-signup">
+                            <!-- step number -->
+                            <div class="number-step-active body-12-medium text-white">2</div>
+                            <span class="body-14-medium text-greyscale-900">Xác thực OTP</span>
+                        </div>
+                        <div class="chevon-signup">
+                            <img src="/libary/signin/svg/chevron-right-900.svg" alt="">
+                        </div>
+                        <div class="step-signup">
+                            <!-- step number -->
+                            <div class="number-step body-12-medium text-main-secondary">3</div>
+                            <span class="body-14-medium text-greyscale-900">Thông tin cá nhân</span>
+                        </div>
+                    </div>
+
+                    <!-- signup header -->
+                    <div class="mt-48px">
+                        <span class="heading-4 text-greyscale-900">Nhập mã OTP</span>
+                    </div>
+                    <div class="mt-32px">
+
+                        <form action="#">
+                            <div class="input-field">
+                                <input type="number" class="" maxlength="1" />
+
+                                <input type="number" class="" maxlength="1" disabled />
+
+                                <input type="number" class="" maxlength="1" disabled />
+
+                                <input type="number" class="" maxlength="1" disabled />
+
+                                <input type="number" class="" maxlength="1" disabled />
+
+                                <input type="number" class="" maxlength="1" disabled />
+                            </div>
+
+                            <div class="d-flex gap-6px mt-12px">
+                                <span class="body-14-regular text-greyscale-400">Bạn chưa nhận được mã xác minh?</span>
+                                <a href="" class="body-14-bold text-semantic-1 text-underline ">Gửi lại</a>
+                            </div>
+                            <button id="signup_otp_submit" name=""
+                                class="button-100-main-liner-rounder-8 body-16-bold text-white mt-32px">Xác
+                                nhận</button>
+
+                            <div id="signup_otp_error" class="justify-content-center mt-24px" style="display: none;">
+                                <div class="error-signup-otp">
+                                    <img src="/libary/signin/svg/error.svg" alt="">
+                                    <span class="body-16-medium text-greyscale-900">
+                                        Mã xác minh không đúng
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div id="signup_otp_success" class="justify-content-center mt-24px" style="display: none;">
+                                <div class="error-signup-otp">
+                                    <img src="/libary/signin/svg/checked-circle.svg" alt="">
+                                    <span class="body-16-medium text-greyscale-900">
+                                        Đã gửi lại mã qua hòm thư
+                                    </span>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- js -->
+    <!-- Plugins script JS -->
+    <script src="/node_modules/@splidejs/splide/dist/js/splide.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/left-slide-show.js"></script>
+    <script src="/js/sign-up.js"></script>
+    <script src="/js/forgot-password.js/opt-password.js"></script>
+</body>
+
+</html>

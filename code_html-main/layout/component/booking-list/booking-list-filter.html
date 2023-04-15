@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/custom-booking-list/booking-list.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- container -->
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <span class="heading-4 text-greyscale-900">Danh sách đặt phòng</span>
+            </div>
+            <div class=" position-relative">
+                <button class="d-flex align-items-center px-3 py-2 border-line-white rounded-8px" id="filter-btn">
+                    <span class="body-16-medium text-greyscale-900">Tất cả</span>
+                    <img src="/libary/booking/svg/arrow-chevron-up.svg" alt="">
+                </button>
+                <div id="booking-list_modal-filter" class="booking-list_modal-filter-content">
+                    <ul>
+                        <li>Tất cả</li>
+                        <li>Chờ thanh toán</li>
+                        <li>Hết hạn thanh toán</li>
+                        <li>Thanh toán không thành công</li>
+                        <li>Đã đặt phòng</li>
+                        <li>Yêu cầu chỉnh sửa</li>
+                        <li>Yêu cầu huỷ</li>
+                        <li>Đã huỷ</li>
+                        <li>Hoàn thành</li>
+                        <li>Đã hoàn tiền</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/booking-list.js" ></script>
+</body>
+
+</html>

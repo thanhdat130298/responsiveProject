@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- page title change in here -->
+    <title>test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/header-footer.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header-drop-shadow">
+            <div class="container d-flex flex-wrap justify-content-between py-17px">
+                <!-- logo, nav -->
+                <div class="d-flex flex-wrap justify-content-between gap-40px align-items-center">
+                    <!-- logo link -->
+                    <a href="/pages" class="p-0 m-0 d-flex align-items-center">
+                        <img src="/libary/header_footer/Logo.png" class="" alt="logo" />
+                    </a>
+                    <!-- divider -->
+                    <div class="divider-y"></div>
+                    <!-- nav link -->
+                    <a href="/pages/searching-list-room.html" class="body-18-bold text-greyscale-500">
+                        Đặt phòng
+                    </a>
+                    <a href="/pages/news/" class="body-18-bold text-greyscale-500">
+                        Tin tức & Sự kiện
+                    </a>
+                </div>
+                <!-- support signin, notification -->
+                <div class="d-flex flex-wrap justify-content-between gap-24px align-items-center">
+                    <a href="/#" class="body-18-bold text-greyscale-500">
+                        Hỗ trợ
+                    </a>
+
+                    <!-- drop down select currency and language -->
+                    <div class="position-relative">
+                        <button class="language-currency-button" id="open_currency">
+                            <img src="/libary/header_footer/svg/global.svg" alt="">
+                            <span class="body-16-bold text-greyscale-500">VN/VND</span>
+                            <img src="/libary/svg/chevron-down.svg" alt="">
+                        </button>
+
+                        <div class="language-currency-dropdown" id="language-currency-dropdown">
+                            <div class="d-flex p-16px gap-16px">
+                                <img src="/libary/header_footer/svg/currency-arrow.svg" class="mini-arrow" alt="">
+                                <!-- language -->
+                                <div class="w-120px">
+                                    <span class="body-16-bold text-greyscale-500 w-100">
+                                        Ngôn ngữ
+                                    </span>
+                                    <div class="vietnamese">
+                                        <img src="/libary/header_footer/svg/vietnam.svg" alt="">
+                                        <span class="body-14-bold text-greyscale-900 ml-12px">Tiếng Việt</span>
+                                    </div>
+                                    <div class="english">
+                                        <img src="/libary/header_footer/svg/english.svg" alt="">
+                                        <span class="body-14-bold text-greyscale-400 ml-12px">English</span>
+                                    </div>
+                                </div>
+
+                                <!-- divider -->
+                                <div class="divider-y"></div>
+
+                                <!-- currentcy -->
+                                <div class="w-120px">
+                                    <span class="body-16-bold text-greyscale-500 w-100">
+                                        Tiền tệ
+                                    </span>
+                                    <ul class="currency-ul">
+                                        <li class="body-14-bold text-greyscale-900">VND</li>
+                                        <li class="body-14-bold text-greyscale-400">USD</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- button sign-in sign-up -->
+                    <div class="d-flex gap-12px">
+                        <button onclick="location.href='/pages/signup';" class="signup-button body-16-bold">
+                            Đăng ký
+                        </button>
+                        <button onclick="location.href='/pages/sign-in.html';" class="signin-button body-16-bold text-white">
+                            Đăng nhập
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- main content -->
+        <div class="container min-h-55vh">
+
+        </div>
+
+        <!-- footer -->
+        <div class="footer-drop-shadow">
+            <div class="container">
+                <div class="d-flex flex-wrap justify-content-between pt-80px">
+                    <!-- logo link -->
+                    <a href="/pages" class="p-0 m-0">
+                         <img src="/libary/header_footer/Logo.png" class="" alt="logo" />
+                    </a>
+                    <!-- nav footer -->
+                    <div class="d-flex flex-wrap gap-40px">
+                        <div class="d-flex flex-column gap-32px">
+                            <a href="/#" class="body-18-bold text-greyscale-500">
+                                Điểm đến
+                            </a>
+                            <!-- <a href="/#" class="body-18-bold text-greyscale-500 mt-2">
+                            </a> -->
+                        </div>
+                        <div class="d-flex flex-column gap-32px">
+                            <!-- <a href="/#" class="body-18-bold text-greyscale-500">
+                            </a>
+                            <a href="/#" class="body-18-bold text-greyscale-500 mt-2">
+                            </a> -->
+                        </div>
+                    </div>
+
+                    <div class="d-flex">
+                        <img src="/libary/header_footer/right-footer-logo.svg" class="footer-logo-right" alt="">
+                        <div class="d-flex flex-column ml-32px">
+                            <span class="body-12-medium text-greyscale-700">Tải app tại</span>
+                            <a href="/#" class="mt-14px">
+                                <img src="/libary/header_footer/svg/App-Store.svg" class="" alt="download" />
+                            </a>
+                            <a href="/#" class="mt-14px">
+                                <img src="/libary/header_footer/svg/Google-Play.svg" class="" alt="download" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-copyright">
+                    <span class="body-14-medium text-greyscale-900">Copyright © 2022 On the Go. All rights
+                        reserved</span>
+                    <span class="body-14-medium text-greyscale-900">Power by Flamingo Resorts</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    // openCurrentcyLanguage
+    function openCurrentcyLanguage() {
+        document.getElementById('language-currency-dropdown').classList.toggle('active');
+    }
+</script>
+
+
+</html>

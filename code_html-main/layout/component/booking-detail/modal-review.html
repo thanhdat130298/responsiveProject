@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/custom-modal_room-detail/custom-modal.css" rel="stylesheet">
+    <link href="/css/custom-rating-star.css" rel="stylesheet">
+    <link href="/css/custom-multiple-img-upload.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="modal-review" class="modal-review" style="display: block;">
+        <div class="modal-review-content hide-scroll-bar">
+            <div class="d-flex justify-content-between px-4">
+                <img src="/libary/booking_detail/svg/Featured icon.svg" alt="">
+                <img src="/libary/booking_detail/svg/Button close X.svg" class="cursor-pointer" alt="">
+            </div>
+            <!-- title -->
+            <div class="d-flex flex-column mt-3 px-4 gap-4px">
+                <span class="heading-4 text-greyscale-900">Đánh giá trải nghiệm</span>
+                <span class="body-16-medium text-greyscale-500">Chia sẻ với chúng tôi về chuyến đi của bạn</span>
+            </div>
+            <!-- review  -->
+            <div class="mt-48px review-content">
+                <div>
+                    <span class="heading-5 text-greyscale-900">Chất lượng dịch vụ</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span class="body-16-bold text-greyscale-700">Sạch sẽ</span>
+                    <div class="rate">
+                        <input type="radio" id="star5" name="rate1" value="5" />
+                        <label for="star5" title="text"></label>
+                        <input type="radio" id="star4" name="rate1" value="4" />
+                        <label for="star4" title="text"></label>
+                        <input type="radio" id="star3" name="rate1" value="3" />
+                        <label for="star3" title="text"></label>
+                        <input type="radio" id="star2" name="rate1" value="2" />
+                        <label for="star2" title="text"></label>
+                        <input type="radio" id="star1" name="rate1" value="1" />
+                        <label for="star1" title="text"></label>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span class="body-16-bold text-greyscale-700">Tiện nghi</span>
+                    <div class="rate">
+                        <input type="radio" id="star10" name="rate2" value="10" />
+                        <label for="star10" title="text"></label>
+                        <input type="radio" id="star9" name="rate2" value="9" />
+                        <label for="star9" title="text"></label>
+                        <input type="radio" id="star8" name="rate2" value="8" />
+                        <label for="star8" title="text"></label>
+                        <input type="radio" id="star7" name="rate2" value="7" />
+                        <label for="star7" title="text"></label>
+                        <input type="radio" id="star6" name="rate2" value="6" />
+                        <label for="star6" title="text"></label>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span class="body-16-bold text-greyscale-700">Dịch vụ</span>
+                    <div class="rate">
+                        <input type="radio" id="star15" name="rate3" value="15" />
+                        <label for="star15" title="text"></label>
+                        <input type="radio" id="star14" name="rate3" value="14" />
+                        <label for="star14" title="text"></label>
+                        <input type="radio" id="star13" name="rate3" value="13" />
+                        <label for="star13" title="text"></label>
+                        <input type="radio" id="star12" name="rate3" value="12" />
+                        <label for="star12" title="text"></label>
+                        <input type="radio" id="star11" name="rate3" value="11" />
+                        <label for="star11" title="text"></label>
+                    </div>
+                </div>
+                <div class="divider-x-dash mt-3"></div>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span class="body-16-bold text-greyscale-900">Trung bình sao</span>
+                </div>
+                <div class="mt-4">
+                    <span class="heading-5 text-greyscale-900">Cảm nhận của bạn</span>
+                </div>
+                <div class="input-review mt-3">
+                    <textarea maxlength="500" id="review-message"
+                        placeholder="Hãy chia sẻ cảm nhận của bạn về chuyến nghỉ dưỡng này nhé!"></textarea>
+                    <div id="counter" class="body-12-regular text-greyscale-400">0/500</div>
+                </div>
+                <!-- upload img -->
+                <div class="py-4">
+                    <div>
+                        <span class="heading-5 text-greyscale-900">Hình ảnh</span>
+                    </div>
+                    <div class="upload__box">
+                        <div class="upload__img-wrap"></div>
+                        <div class="upload__btn-box d-flex gap-12px">
+                            <label class="upload__btn">
+                                <img src="/libary/booking_detail/svg/upload.svg" alt="">
+                                <input id="input-img" type="file" multiple="" data-max_length="20" class="upload__inputfile">
+                            </label>
+                            <label for="input-img" class="d-flex flex-column">
+                                <span class="body-14-bold text-greyscale-700">Tải ảnh lên</span> 
+                                <span class="body-14-medium text-greyscale-400">Tối đa 5 ảnh</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- button  -->
+            <div class="d-flex gap-16px mt-32px px-4">
+                <button type="" class="button-100-border-main-p-10-20-rounder-8 body-16-bold text-warning">Hủy</button>
+                <button class="button-100-main-sec-liner body-16-bold text-white">Gửi</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        const messageEle = document.getElementById('review-message');
+        const counterEle = document.getElementById('counter');
+
+        messageEle.addEventListener('input', function (e) {
+            const target = e.target;
+
+            // Get the `maxlength` attribute
+            const maxLength = target.getAttribute('maxlength');
+
+            // Count the current number of characters
+            const currentLength = target.value.length;
+
+            counterEle.innerHTML = `${currentLength}/${maxLength}`;
+        });
+    </script>
+    <script>
+        jQuery(document).ready(function () {
+            ImgUpload();
+        });
+
+        function ImgUpload() {
+            var imgWrap = "";
+            var imgArray = [];
+
+            $('.upload__inputfile').each(function () {
+                $(this).on('change', function (e) {
+                    imgWrap = $(this).closest('.upload__box').find('.upload__img-wrap');
+                    var maxLength = $(this).attr('data-max_length');
+
+                    var files = e.target.files;
+                    var filesArr = Array.prototype.slice.call(files);
+                    var iterator = 0;
+                    filesArr.forEach(function (f, index) {
+
+                        if (!f.type.match('image.*')) {
+                            return;
+                        }
+
+                        if (imgArray.length > maxLength) {
+                            return false
+                        } else {
+                            var len = 0;
+                            for (var i = 0; i < imgArray.length; i++) {
+                                if (imgArray[i] !== undefined) {
+                                    len++;
+                                }
+                            }
+                            if (len > maxLength) {
+                                return false;
+                            } else {
+                                imgArray.push(f);
+
+                                var reader = new FileReader();
+                                reader.onload = function (e) {
+                                    var html = "<div class='upload__img-box'><div style='background-image: url(" + e.target.result + ")' data-number='" + $(".upload__img-close").length + "' data-file='" + f.name + "' class='img-bg'><div class='upload__img-close'></div></div></div>";
+                                    imgWrap.append(html);
+                                    iterator++;
+                                }
+                                reader.readAsDataURL(f);
+                            }
+                        }
+                    });
+                });
+            });
+
+            $('body').on('click', ".upload__img-close", function (e) {
+                var file = $(this).parent().data("file");
+                for (var i = 0; i < imgArray.length; i++) {
+                    if (imgArray[i].name === file) {
+                        imgArray.splice(i, 1);
+                        break;
+                    }
+                }
+                $(this).parent().parent().remove();
+            });
+        }
+    </script>
+</body>
+
+</html>

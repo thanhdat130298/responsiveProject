@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- page title change in here -->
+    <title>test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/custom-modal_room-detail/custom-modal.css" rel="stylesheet">
+    <link href="/css/custom-modal.css" rel="stylesheet">
+
+    <!-- datepicker style -->
+    <link href="/css/date-range-picker.css" rel="stylesheet">
+    <!-- date range picker -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+</head>
+
+<body>
+    <div class="list-services-modal" id="modal-list-service" name="modal-list-service" style="display: block;">
+        <div class="list-services-modal-content custom_scroll">
+
+            <!-- service title -->
+            <div class="d-flex py-4 flex-wrap justify-content-between position_close-modal-top bg-white">
+                <span class="heading-4 text-greyscale-900">Trải nghiệm dịch vụ</span>
+                <button id="close_listServices" onclick="close_listServices()" name=""><img src="/libary/svg/Close-Circle.svg" class="" alt=""></button>
+            </div>
+
+            <!-- service content -->
+            <div class="list-service-option">
+                <!-- list service head -->
+
+                <div class="service-head">
+                    <div class="service-col-1">
+                        <div class="d-flex py-10px">
+                            <span class="body-16-bold text-greyscale-900">Dịch vụ
+                            </span>
+                        </div>
+                    </div>
+                    <div class="service-col-2">
+                        <div class="d-flex justify-content-center py-10px">
+                            <span class="body-16-bold text-greyscale-900">Ngày dự kiến
+                            </span>
+                        </div>
+                    </div>
+                    <div class="service-col-3">
+                        <div class="d-flex justify-content-center py-10px">
+                            <span class="body-16-bold text-greyscale-900">Số người lớn
+                            </span>
+                        </div>
+                    </div>
+                    <div class="service-col-4">
+                        <div class="d-flex justify-content-center py-10px">
+                            <span class="body-16-bold text-greyscale-900">Số trẻ em
+                            </span>
+                        </div>
+                    </div>
+                    <div class="service-col-5">
+                        <div class="d-flex justify-content-center py-10px">
+                            <span class="body-16-bold text-greyscale-900">Ghi chú
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- service content row - 1  -->
+                <div class="service-row">
+                    <!-- col-1 service -->
+                    <div class="service-col-1 position-relative">
+                        <div class="d-flex align-items-center gap-16px">
+                            <!-- custom checkbox -->
+                            <div style="width: 50px; position: relative">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-1" id="checkbox-1" />
+                                    <label for="checkbox-1"></label>
+                                </div>
+                            </div>
+                            <!-- content infomation service -->
+                            <div class="content-service-checkbox d-flex gap-16px">
+                                <img src="/libary/booking/booking-card/service-1.png" class="" alt="">
+                                <div class="d-flex flex-column">
+                                    <div class="">
+                                        <span class="body-16-bold text-greyscale-900">Body and Soul spa</span>
+                                    </div>
+
+                                    <div class="mt-4px">
+                                        <span class="body-12-medium text-greyscale-700 truncate-3-row">Lorem ipsum dolor
+                                            sit amet
+                                            consectetur. Turpis facilisis
+                                            tristique viverra praesent quam metus sed</span>
+                                    </div>
+                                    <div class="mt-16px">
+                                        <span class="body-14-italic text-greyscale-400">Tính phí tại chỗ nghỉ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col-2 date start -->
+                    <div class="service-col-2">
+                        <label for="start-date" class="bg-50-p12-16 align-items-center d-flex cursor-pointer">
+                            <input id="start-date" type="text" name="datefilter" class="body-16-medium" value="" />
+                            <img src="/libary/homepage/svg/calendar-plus.svg" alt="">
+                        </label>
+                    </div>
+                    <!-- col-3-adult-person -->
+                    <div class="service-col-3">
+                        <div class="">
+                            <div class="increment-decrement">
+                                <button id="" class="">
+                                    <img src="/libary/booking/svg/circle-decrement.svg" id="" class="" alt="">
+                                </button>
+                                <span id="" class="">4</span>
+                                <button id="" class="">
+                                    <img src="/libary/booking/svg/circle-increment.svg" id="" class="" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col-4-child-person -->
+                    <div class="service-col-4">
+                        <div class="increment-decrement">
+                            <button id="" class="">
+                                <img src="/libary/booking/svg/circle-decrement.svg" id="" class="" alt="">
+                            </button>
+                            <span id="" class="">2</span>
+                            <button id="" class="">
+                                <img src="/libary/booking/svg/circle-increment.svg" id="" class="" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <!-- col-5-notes -->
+                    <div class="service-col-5">
+                        <div class="">
+                            <input type="text" name="" id="" class="input-100-grey-50-radius-8"
+                                placeholder="Nhập ghi chú">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- service content row - 2  -->
+                <div class="service-row">
+                    <!-- col-1 service -->
+                    <div class="service-col-1 position-relative">
+                        <div class="d-flex align-items-center gap-16px">
+                            <!-- custom checkbox -->
+                            <div style="width: 50px; position: relative">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-2" id="checkbox-2" />
+                                    <label for="checkbox-2"></label>
+                                </div>
+                            </div>
+                            <!-- content infomation service -->
+                            <div class="content-service-checkbox d-flex gap-16px">
+                                <img src="/libary/booking/booking-card/service-1.png" class="" alt="">
+                                <div class="d-flex flex-column">
+                                    <div class="">
+                                        <span class="body-16-bold text-greyscale-900">Body and Soul spa</span>
+                                    </div>
+
+                                    <div class="mt-4px">
+                                        <span class="body-12-medium text-greyscale-700 truncate-3-row">Lorem ipsum dolor
+                                            sit amet
+                                            consectetur. Turpis facilisis
+                                            tristique viverra praesent quam metus sed</span>
+                                    </div>
+                                    <div class="mt-16px">
+                                        <span class="body-14-italic text-greyscale-400">Tính phí tại chỗ nghỉ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col-2 date start -->
+                    <div class="service-col-2">
+                        <label for="start-date-2" class="bg-50-p12-16 d-flex cursor-pointer">
+                            <input id="start-date-2" type="text" name="datefilter" class="body-16-medium" value="" />
+                            <img src="/libary/homepage/svg/calendar-plus.svg" alt="">
+                        </label>
+                    </div>
+                    <!-- col-3-adult-person -->
+                    <div class="service-col-3">
+                        <div class="">
+                            <div class="increment-decrement">
+                                <button id="" class="">
+                                    <img src="/libary/booking/svg/circle-decrement.svg" id="" class="" alt="">
+                                </button>
+                                <span id="" class="">4</span>
+                                <button id="" class="">
+                                    <img src="/libary/booking/svg/circle-increment.svg" id="" class="" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col-4-child-person -->
+                    <div class="service-col-4">
+                        <div class="increment-decrement">
+                            <button id="" class="">
+                                <img src="/libary/booking/svg/circle-decrement.svg" id="" class="" alt="">
+                            </button>
+                            <span id="" class="">2</span>
+                            <button id="" class="">
+                                <img src="/libary/booking/svg/circle-increment.svg" id="" class="" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <!-- col-5-notes -->
+                    <div class="service-col-5">
+                        <div class="">
+                            <input type="text" name="" id="" class="input-100-grey-50-radius-8"
+                                placeholder="Nhập ghi chú">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- service content row - 3  -->
+                <div class="service-row">
+                    <!-- col-1 service -->
+                    <div class="service-col-1 position-relative">
+                        <div class="d-flex align-items-center gap-16px">
+                            <!-- custom checkbox -->
+                            <div style="width: 50px; position: relative">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-3" id="checkbox-3" />
+                                    <label for="checkbox-3"></label>
+                                </div>
+                            </div>
+                            <!-- content infomation service -->
+                            <div class="content-service-checkbox d-flex gap-16px">
+                                <img src="/libary/booking/booking-card/service-1.png" class="" alt="">
+                                <div class="d-flex flex-column">
+                                    <div class="">
+                                        <span class="body-16-bold text-greyscale-900">Body and Soul spa</span>
+                                    </div>
+
+                                    <div class="mt-4px">
+                                        <span class="body-12-medium text-greyscale-700 truncate-3-row">Lorem ipsum dolor
+                                            sit amet
+                                            consectetur. Turpis facilisis
+                                            tristique viverra praesent quam metus sed</span>
+                                    </div>
+                                    <div class="mt-16px">
+                                        <span class="body-14-italic text-greyscale-400">Tính phí tại chỗ nghỉ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col-2 date start -->
+                    <div class="service-col-2">
+                        <label for="start-date-3" class="bg-50-p12-16 d-flex cursor-pointer">
+                            <input id="start-date-3" type="text" name="datefilter" class="body-16-medium" value="" />
+                            <img src="/libary/homepage/svg/calendar-plus.svg" alt="">
+                        </label>
+                    </div>
+                    <!-- col-3-adult-person -->
+                    <div class="service-col-3">
+                        <div class="">
+                            <div class="increment-decrement">
+                                <button id="" class="">
+                                    <img src="/libary/booking/svg/circle-decrement.svg" id="" class="" alt="">
+                                </button>
+                                <span id="" class="">4</span>
+                                <button id="" class="">
+                                    <img src="/libary/booking/svg/circle-increment.svg" id="" class="" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col-4-child-person -->
+                    <div class="service-col-4">
+                        <div class="increment-decrement">
+                            <button id="" class="">
+                                <img src="/libary/booking/svg/circle-decrement.svg" id="" class="" alt="">
+                            </button>
+                            <span id="" class="">2</span>
+                            <button id="" class="">
+                                <img src="/libary/booking/svg/circle-increment.svg" id="" class="" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <!-- col-5-notes -->
+                    <div class="service-col-5">
+                        <div class="">
+                            <input type="text" name="" id="" class="input-100-grey-50-radius-8"
+                                placeholder="Nhập ghi chú">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- service content row - 4  -->
+                <div class="service-row">
+                    <!-- col-1 service -->
+                    <div class="service-col-1 position-relative">
+                        <div class="d-flex align-items-center gap-16px">
+                            <!-- custom checkbox -->
+                            <div style="width: 50px; position: relative">
+                                <div class="group-checkbox">
+                                    <input type="checkbox" name="checkbox-4" id="checkbox-4" />
+                                    <label for="checkbox-4"></label>
+                                </div>
+                            </div>
+                            <!-- content infomation service -->
+                            <div class="content-service-checkbox d-flex gap-16px">
+                                <img src="/libary/booking/booking-card/service-1.png" class="" alt="">
+                                <div class="d-flex flex-column">
+                                    <div class="">
+                                        <span class="body-16-bold text-greyscale-900">Body and Soul spa</span>
+                                    </div>
+
+                                    <div class="mt-4px">
+                                        <span class="body-12-medium text-greyscale-700 truncate-3-row">Lorem ipsum dolor
+                                            sit amet
+                                            consectetur. Turpis facilisis
+                                            tristique viverra praesent quam metus sed</span>
+                                    </div>
+                                    <div class="mt-16px">
+                                        <span class="body-14-italic text-greyscale-400">Tính phí tại chỗ nghỉ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col-2 date start -->
+                    <div class="service-col-2">
+                        <label for="start-date-4" class="bg-50-p12-16 d-flex cursor-pointer">
+                            <input id="start-date-4" type="text" name="datefilter" class="body-16-medium" value="" />
+                            <img src="/libary/homepage/svg/calendar-plus.svg" alt="">
+                        </label>
+                    </div>
+                    <!-- col-3-adult-person -->
+                    <div class="service-col-3">
+                        <div class="">
+                            <div class="increment-decrement">
+                                <button id="" class="">
+                                    <img src="/libary/booking/svg/circle-decrement.svg" id="" class="" alt="">
+                                </button>
+                                <span id="" class="">4</span>
+                                <button id="" class="">
+                                    <img src="/libary/booking/svg/circle-increment.svg" id="" class="" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col-4-child-person -->
+                    <div class="service-col-4">
+                        <div class="increment-decrement">
+                            <button id="" class="">
+                                <img src="/libary/booking/svg/circle-decrement.svg" id="" class="" alt="">
+                            </button>
+                            <span id="" class="">2</span>
+                            <button id="" class="">
+                                <img src="/libary/booking/svg/circle-increment.svg" id="" class="" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <!-- col-5-notes -->
+                    <div class="service-col-5">
+                        <div class="">
+                            <input type="text" name="" id="" class="input-100-grey-50-radius-8"
+                                placeholder="Nhập ghi chú">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- bottom button submit -->
+
+            <div class="service-check-button">
+                <span class="body-14-medium text-greyscale-900" id="" name="">Đã chọn 4/10</span>
+                <button for="" id="button-confirm-service" class="button-confirm-service" name="button-confirm-service">
+                    Xác nhận <span class="" id="" name="">04</span> dịch vụ đã chọn
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/single-date-picker.js">
+ 
+    </script>
+</body>
+
+</html>
